@@ -73,6 +73,7 @@ public class sanityAllOptionsTest {
 	 * date.add(Calendar.DATE, 1); Or just assign the Vars to specific date: static
 	 * int startDateYear = 2019; static int startDateMonth = 2; static int
 	 * startDateDay = 19;
+	 * 
 	 */
 	// Start insurance at the same day.
 	int startDateYear = Calendar.getInstance().get(Calendar.YEAR);
