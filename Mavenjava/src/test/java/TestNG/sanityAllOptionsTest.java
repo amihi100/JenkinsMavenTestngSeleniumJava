@@ -2,7 +2,7 @@ package TestNG;
 /**
  * Java Selenium project for Pango insurance app.  
  * amihi100@gmail.com
- * Version 1.2
+ * Version 1.3
  */
 
 import java.io.File;
