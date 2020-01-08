@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="5" total="13" passed="8">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Test-class Suite" duration-ms="415091" started-at="2020-01-07T11:03:26Z" finished-at="2020-01-07T11:10:21Z">
+    <groups>
+    </groups>
+    <test name="Test-class test 2 red1years" duration-ms="415091" started-at="2020-01-07T11:03:26Z" finished-at="2020-01-07T11:10:21Z">
+      <class name="TestNG.sanityAllOptionsTest">
+        <test-method status="PASS" signature="initialOfferQuestions()[pri:10, instance:TestNG.sanityAllOptionsTest@76a4ebf2]" name="initialOfferQuestions" duration-ms="61184" started-at="2020-01-07T11:03:26Z" finished-at="2020-01-07T11:04:27Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialOfferQuestions -->
+        <test-method status="PASS" signature="initialOfferScreen()[pri:30, instance:TestNG.sanityAllOptionsTest@76a4ebf2]" name="initialOfferScreen" duration-ms="43011" started-at="2020-01-07T11:04:27Z" finished-at="2020-01-07T11:05:10Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialOfferScreen -->
+        <test-method status="PASS" signature="finalOfferQuestions()[pri:40, instance:TestNG.sanityAllOptionsTest@76a4ebf2]" name="finalOfferQuestions" duration-ms="78345" started-at="2020-01-07T11:05:10Z" finished-at="2020-01-07T11:06:28Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- finalOfferQuestions -->
+        <test-method status="PASS" signature="finalOfferScreen()[pri:50, instance:TestNG.sanityAllOptionsTest@76a4ebf2]" name="finalOfferScreen" duration-ms="32442" started-at="2020-01-07T11:06:28Z" finished-at="2020-01-07T11:07:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- finalOfferScreen -->
+        <test-method status="PASS" signature="covers()[pri:70, instance:TestNG.sanityAllOptionsTest@76a4ebf2]" name="covers" duration-ms="5416" started-at="2020-01-07T11:07:01Z" finished-at="2020-01-07T11:07:06Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- covers -->
+        <test-method status="PASS" signature="payments()[pri:80, instance:TestNG.sanityAllOptionsTest@76a4ebf2]" name="payments" duration-ms="27375" started-at="2020-01-07T11:07:06Z" finished-at="2020-01-07T11:07:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- payments -->
+        <test-method status="PASS" signature="returnSteps()[pri:85, instance:TestNG.sanityAllOptionsTest@76a4ebf2]" name="returnSteps" duration-ms="68647" started-at="2020-01-07T11:07:33Z" finished-at="2020-01-07T11:08:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- returnSteps -->
+        <test-method status="PASS" signature="forwardSteps()[pri:86, instance:TestNG.sanityAllOptionsTest@76a4ebf2]" name="forwardSteps" duration-ms="98642" started-at="2020-01-07T11:08:42Z" finished-at="2020-01-07T11:10:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- forwardSteps -->
+      </class> <!-- TestNG.sanityAllOptionsTest -->
+    </test> <!-- Test-class test 2 red1years -->
+  </suite> <!-- Test-class Suite -->
+</testng-results>
