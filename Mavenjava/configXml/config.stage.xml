@@ -7,11 +7,10 @@
 	<entry key="appID">false</entry>
 	<entry key="environment">stage</entry>
 	<!-- <entry key="carNumber">2432773</entry> -->
-	<entry key="carNumber">1411852</entry>
+	<entry key="carNumber">1411853</entry>
 	<entry key="waitForElement">30</entry>
 	<entry key="waitBeforeClick">3</entry>
 	<entry key="MILLISECONDS">2000</entry>
-
 	<!-- Define scenario variables - FIRST offer questions: -->
 	<entry key="startInsuranceDate">0111 - This value is in sanity class!</entry>
 	<entry key="numberOfDrivers">3</entry>
