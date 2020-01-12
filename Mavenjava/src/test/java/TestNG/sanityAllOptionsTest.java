@@ -110,10 +110,11 @@ public class sanityAllOptionsTest {
 		}
 
 		try {
+			TimeUnit.SECONDS.sleep(this.VarClass.waitBeforeClick + 7);
 			// Email:
 			VarClass.driver.get("https://iiii.co.il/#contact");
 			// Wait +7 seconds for iiii site.
-			TimeUnit.SECONDS.sleep(this.VarClass.waitBeforeClick + 7);
+
 			VarClass.driver.findElementByXPath("//input[@placeholder='Your name']")
 					.sendKeys(VarClass.environment + " Error");
 			TimeUnit.MILLISECONDS.sleep(VarClass.MILLISECONDS);
