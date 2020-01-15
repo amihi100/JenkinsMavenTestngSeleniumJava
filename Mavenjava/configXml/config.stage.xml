@@ -7,7 +7,7 @@
 	<entry key="appID">false</entry>
 	<entry key="environment">stage</entry>
 	<!-- <entry key="carNumber">2432773</entry> -->
-	<entry key="carNumber">1411854</entry>
+	<entry key="carNumber">1411852</entry>
 	<entry key="waitForElement">30</entry>
 	<entry key="waitBeforeClick">3</entry>
 	<entry key="MILLISECONDS">2000</entry>

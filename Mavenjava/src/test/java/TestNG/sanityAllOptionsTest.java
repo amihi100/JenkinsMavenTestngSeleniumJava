@@ -85,7 +85,7 @@ public class sanityAllOptionsTest {
 	String numOfDrivers = "";
 
 	public void emailException() throws Exception {
-
+		TimeUnit.SECONDS.sleep(this.VarClass.waitBeforeClick + 7);
 		try {
 			// FullScreen:
 //			Dimension windowDimension2;
@@ -140,7 +140,7 @@ public class sanityAllOptionsTest {
 				VarClass.driver.findElementByXPath("//textarea[@placeholder='Message']")
 						.sendKeys(VarClass.driver.manage().logs().get("browser").toString() + "</br>");
 				LogEntries logs = VarClass.driver.manage().logs().get("browser");
-
+				System.out.println(VarClass.driver.manage().logs().get("browser"));
 			}
 
 			System.out.println(VarClass.driver.manage().logs().get("browser"));
