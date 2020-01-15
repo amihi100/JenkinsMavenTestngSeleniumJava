@@ -9,8 +9,8 @@
 	<!-- <entry key="carNumber">2432773</entry> -->
 	<entry key="carNumber">1411852</entry>
 	<entry key="waitForElement">30</entry>
-	<entry key="waitBeforeClick">2</entry>
-	<entry key="MILLISECONDS">1500</entry>
+	<entry key="waitBeforeClick">3</entry>
+	<entry key="MILLISECONDS">2000</entry>
 
 	<!-- Define scenario variables - FIRST offer questions: -->
 	<entry key="startInsuranceDate">0111 - This value is in sanity class!</entry>
@@ -24,11 +24,11 @@
 	<entry key="restrictions">false</entry>
 	<!-- Define scenario variables - contact wizard : -->
 	<entry key="wizardPhone0">0507202828</entry>
-	<entry key="wizardPhone1">0507202828</entry>
+
 
 	<!-- Define scenario variables - FINAL offer questions: -->
 	<!-- Policy owner details: -->
-	<entry key="insuredName">סביבת פרוד</entry>
+	<entry key="insuredName">סביבת דב</entry>
 	<entry key="insuredLastName">בדיקה</entry>
 	<entry key="insuredIdDriver">330653783</entry>
 	<entry key="genderPolicyOwner">male</entry>
