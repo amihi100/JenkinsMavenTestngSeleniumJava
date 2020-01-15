@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Test-class_Suite">
-              <span class="suite-name border-passed">Test-class Suite</span>
+              <span class="suite-name border-failed">Test-class Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Test-class_Suite">
-                    <span>C:\Mavenjava2\testng.xml</span>
+                    <span>C:\Users\amichaito\git\JenkinsMavenTestngSeleniumJava\Mavenjava\testng.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,7 +91,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">8 methods,   8 passed</span>
+                    <span class="method-stats">8 methods, 1 failed,   7 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Test-class_Suite" class="hide-methods failed suite-Test-class_Suite"> (hide)</a> <!-- hide-methods failed suite-Test-class_Suite -->
+                      <a href="#" panel-name="suite-Test-class_Suite" class="show-methods failed suite-Test-class_Suite"> (show)</a> <!-- show-methods failed suite-Test-class_Suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Test-class_Suite">
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Test-class_Suite" title="TestNG.sanityAllOptionsTest" hash-for-method="forwardSteps">forwardSteps</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Test-class_Suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -113,11 +127,6 @@
                       <span>
                         <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Test-class_Suite" title="TestNG.sanityAllOptionsTest" hash-for-method="finalOfferScreen">finalOfferScreen</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Test-class_Suite" title="TestNG.sanityAllOptionsTest" hash-for-method="forwardSteps">forwardSteps</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -152,6 +161,30 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Test-class_Suite" class="panel Test-class_Suite">
+          <div class="suite-Test-class_Suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">TestNG.sanityAllOptionsTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="forwardSteps">
+                  </a> <!-- forwardSteps -->
+                  <span class="method-name">forwardSteps</span>
+                  <div class="stack-trace">java.lang.Exception: Failed in Email send by iiii.co.il
+	at TestNG.sanityAllOptionsTest.emailException(sanityAllOptionsTest.java:156)
+	at TestNG.sanityAllOptionsTest.forwardSteps(sanityAllOptionsTest.java:1223)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+... Removed 16 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Test-class_Suite-class-failed -->
           <div class="suite-Test-class_Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -177,13 +210,6 @@
                   <a name="finalOfferScreen">
                   </a> <!-- finalOfferScreen -->
                   <span class="method-name">finalOfferScreen</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="forwardSteps">
-                  </a> <!-- forwardSteps -->
-                  <span class="method-name">forwardSteps</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -219,15 +245,15 @@
         </div> <!-- panel Test-class_Suite -->
         <div panel-name="test-xml-Test-class_Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Mavenjava2\testng.xml</span>
+            <span class="header-content">C:\Users\amichaito\git\JenkinsMavenTestngSeleniumJava\Mavenjava\testng.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite thread-count=&quot;2&quot; guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Test-class Suite&quot; parallel=&quot;tests&quot;&gt;
-  &lt;test thread-count=&quot;2&quot; name=&quot;Test-class test 2 red1years&quot; parallel=&quot;tests&quot;&gt;
-    &lt;parameter name=&quot;xml&quot; value=&quot;stage&quot;/&gt;
+&lt;suite thread-count=&quot;1&quot; guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Test-class Suite&quot; parallel=&quot;tests&quot;&gt;
+  &lt;test thread-count=&quot;1&quot; name=&quot;Test-class test 2 red1years&quot; parallel=&quot;tests&quot;&gt;
+    &lt;parameter name=&quot;xml&quot; value=&quot;dev&quot;/&gt;
     &lt;classes&gt;
       &lt;class name=&quot;TestNG.sanityAllOptionsTest&quot;/&gt;
     &lt;/classes&gt;
@@ -271,37 +297,37 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(8);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'forwardSteps')
+data.setCell(0, 1, 'finalOfferQuestions')
 data.setCell(0, 2, 'TestNG.sanityAllOptionsTest')
-data.setCell(0, 3, 98642);
+data.setCell(0, 3, 82541);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'finalOfferQuestions')
+data.setCell(1, 1, 'forwardSteps')
 data.setCell(1, 2, 'TestNG.sanityAllOptionsTest')
-data.setCell(1, 3, 78345);
+data.setCell(1, 3, 74288);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'returnSteps')
 data.setCell(2, 2, 'TestNG.sanityAllOptionsTest')
-data.setCell(2, 3, 68647);
+data.setCell(2, 3, 68860);
 data.setCell(3, 0, 3)
 data.setCell(3, 1, 'initialOfferQuestions')
 data.setCell(3, 2, 'TestNG.sanityAllOptionsTest')
-data.setCell(3, 3, 61184);
+data.setCell(3, 3, 58898);
 data.setCell(4, 0, 4)
 data.setCell(4, 1, 'initialOfferScreen')
 data.setCell(4, 2, 'TestNG.sanityAllOptionsTest')
-data.setCell(4, 3, 43011);
+data.setCell(4, 3, 44811);
 data.setCell(5, 0, 5)
 data.setCell(5, 1, 'finalOfferScreen')
 data.setCell(5, 2, 'TestNG.sanityAllOptionsTest')
-data.setCell(5, 3, 32442);
+data.setCell(5, 3, 32119);
 data.setCell(6, 0, 6)
 data.setCell(6, 1, 'payments')
 data.setCell(6, 2, 'TestNG.sanityAllOptionsTest')
-data.setCell(6, 3, 27375);
+data.setCell(6, 3, 27423);
 data.setCell(7, 0, 7)
 data.setCell(7, 1, 'covers')
 data.setCell(7, 2, 'TestNG.sanityAllOptionsTest')
-data.setCell(7, 3, 5416);
+data.setCell(7, 3, 5426);
 window.suiteTableData['Test-class_Suite']= { tableData: data, tableDiv: 'times-div-Test-class_Suite'}
 return data;
 }
@@ -354,31 +380,33 @@ return data;
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">initialOfferScreen</span>
-                <span class="method-start">61187 ms</span>
+                <span class="method-start">58902 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">finalOfferQuestions</span>
-                <span class="method-start">104199 ms</span>
+                <span class="method-start">103715 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">finalOfferScreen</span>
-                <span class="method-start">182545 ms</span>
+                <span class="method-start">186259 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">covers</span>
-                <span class="method-start">214988 ms</span>
+                <span class="method-start">218379 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">payments</span>
-                <span class="method-start">220405 ms</span>
+                <span class="method-start">223807 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">returnSteps</span>
-                <span class="method-start">247782 ms</span>
+                <span class="method-start">251231 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">forwardSteps</span>
-                <span class="method-start">316431 ms</span>
+                <span class="method-start">320093 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
