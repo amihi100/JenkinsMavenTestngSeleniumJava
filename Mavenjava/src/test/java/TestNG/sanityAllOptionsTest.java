@@ -14,6 +14,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.time.Instant;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.InvalidPropertiesFormatException;
@@ -50,7 +51,6 @@ import org.testng.annotations.Parameters;
  *
  */
 
-
 public class sanityAllOptionsTest {
 	@Parameters("xml")
 	public sanityAllOptionsTest(String xml)
@@ -84,7 +84,24 @@ public class sanityAllOptionsTest {
 	String dateWithZero;
 	String numOfDrivers = "";
 
+//	public void printLogJS() {
+//		
+//		
+////		JavascriptExecutor jsLog = (JavascriptExecutor) VarClass.driver;
+////		jsLog.executeScript("console.stdlog = console.log.bind(console)");
+////		JavascriptExecutor jsLog2 = (JavascriptExecutor) VarClass.driver;
+////		jsLog.executeScript("console.logs = []");
+////		
+//		
+////		console.log = function(){
+////		    console.logs.push(Array.from(arguments));
+////		    console.stdlog.apply(console, arguments);
+////		}
+////	}
+
 	public void emailException() throws Exception {
+		ArrayList<String> errorsList = new ArrayList<String>();
+
 		TimeUnit.SECONDS.sleep(this.VarClass.waitBeforeClick + 7);
 		try {
 			// FullScreen:
@@ -111,7 +128,18 @@ public class sanityAllOptionsTest {
 
 		try {
 			TimeUnit.SECONDS.sleep(this.VarClass.waitBeforeClick + 7);
+
+			// Print logs from console (Warnings and Errors ONLY!)
+			System.out.println("Errors logs:");
+			LogEntries logs = VarClass.driver.manage().logs().get("browser");
+			for (LogEntry entry : logs) {
+				System.out.println(entry.getMessage());
+				errorsList.add(entry.getMessage());
+			}
+			;
+
 			// Email:
+
 			VarClass.driver.get("https://iiii.co.il/#contact");
 			// Wait +7 seconds for iiii site.
 
@@ -125,27 +153,30 @@ public class sanityAllOptionsTest {
 					.sendKeys(VarClass.environment + " Error");
 			TimeUnit.MILLISECONDS.sleep(VarClass.MILLISECONDS);
 
-			VarClass.driver.findElementByXPath("//textarea[@placeholder='Message']")
-					.sendKeys(VarClass.driver.manage().logs().get("browser").toString() + "</br>");
-			// logs into arrayList.
-			LogEntries logEntries = VarClass.driver.manage().logs().get(LogType.BROWSER);
-
-			String logLine;
-			for (LogEntry entry : logEntries) {
-				logLine = new Date(entry.getTimestamp()) + " " + entry.getLevel() + " " + entry.getMessage();
-				System.out.println(logLine);
-
-				VarClass.driver.findElementByXPath("//textarea[@placeholder='Message']").sendKeys(logLine + "</br>");
-
+			for (int i = 0; i < errorsList.size(); i++) {
 				VarClass.driver.findElementByXPath("//textarea[@placeholder='Message']")
-						.sendKeys(VarClass.driver.manage().logs().get("browser").toString() + "</br>");
-				LogEntries logs = VarClass.driver.manage().logs().get("browser");
-				System.out.println(VarClass.driver.manage().logs().get("browser"));
+						.sendKeys(errorsList.get(i) + "<br>");
+				
 			}
-
-			System.out.println(VarClass.driver.manage().logs().get("browser"));
-			VarClass.driver.findElementByXPath("//textarea[@placeholder='Message']")
-					.sendKeys(VarClass.driver.manage().logs().get("browser") + "</br>");
+//			// logs into arrayList.
+//			LogEntries logEntries = VarClass.driver.manage().logs().get(LogType.BROWSER);
+//
+//			String logLine;
+//			for (LogEntry entry : logEntries) {
+//				logLine = new Date(entry.getTimestamp()) + " " + entry.getLevel() + " " + entry.getMessage();
+//				System.out.println(logLine);
+//
+//				VarClass.driver.findElementByXPath("//textarea[@placeholder='Message']").sendKeys(logLine + "<br>");
+//
+//				VarClass.driver.findElementByXPath("//textarea[@placeholder='Message']")
+//						.sendKeys(VarClass.driver.manage().logs().get("browser").toString() + "<br>");
+//				//LogEntries logs = VarClass.driver.manage().logs().get("browser");
+//				System.out.println(VarClass.driver.manage().logs().get("browser"));
+//			}
+//
+//			System.out.println(VarClass.driver.manage().logs().get("browser"));
+//			VarClass.driver.findElementByXPath("//textarea[@placeholder='Message']")
+//					.sendKeys(VarClass.driver.manage().logs().get("browser") + "<br>");
 			TimeUnit.MILLISECONDS.sleep(VarClass.MILLISECONDS);
 			VarClass.driver.findElementByXPath("//input[@class='wpcf7-form-control wpcf7-submit']").click();
 			// Wait +7 seconds for iiii site.
@@ -355,8 +386,13 @@ public class sanityAllOptionsTest {
 			// js.executeScript("setTimeout(()=>{document.querySelector('#btn-save-start-date').click()},
 			// 000)");
 
-			// Screen1.2: How many drivers.
+//			System.out.println("Errors logs:");
+//			LogEntries logs = VarClass.driver.manage().logs().get("browser");
+//					for (LogEntry entry: logs){
+//					System.out.println(entry.getMessage());
+//					};
 
+			// Screen1.2: How many drivers.
 			VarClass.wait.until(ExpectedConditions
 					.visibilityOfElementLocated(ByXPath.xpath((numberOfDrivers(VarClass.numberOfDrivers)))));
 			TimeUnit.SECONDS.sleep(VarClass.waitBeforeClick);
@@ -368,6 +404,20 @@ public class sanityAllOptionsTest {
 			VarClass.driver.findElementById("youngest-driver-age").sendKeys(VarClass.youngestDriverAge);
 			TimeUnit.SECONDS.sleep(VarClass.waitBeforeClick);
 			VarClass.driver.findElementByXPath("//aw-wizard-step[3]//*[contains(@class,'orange')]").click();
+
+//			JavascriptExecutor js = (JavascriptExecutor) VarClass.driver;
+//			js.executeScript("$('.accessibility-menu').show()");
+//			
+////			
+//			
+//			console.stdlog = console.log.bind(console);
+//			console.logs = [];
+//			console.log = function(){
+//			    console.logs.push(Array.from(arguments));
+//			    console.stdlog.apply(console, arguments);
+//			}
+//			
+//			
 
 			// Screen1.4: licenseOfYoungestDriver.;
 			VarClass.wait
@@ -474,7 +524,9 @@ public class sanityAllOptionsTest {
 	@Test(priority = 30)
 	public void initialOfferScreen() throws Exception {
 		try {
+
 			TimeUnit.SECONDS.sleep(2);
+
 			WebDriverWait wait1 = new WebDriverWait(VarClass.driver, this.VarClass.waitForElement);
 			wait1.until(ExpectedConditions.visibilityOfElementLocated(
 					By.cssSelector("body > app-root > primary-bid > div > div.bid-content > a.link-procceed")));
@@ -667,7 +719,8 @@ public class sanityAllOptionsTest {
 			// 4 מתוך 6 ") )
 			// question for additional driver:
 			if (VarClass.driver
-					.findElementByXPath("/html/body/app-root/external-app-offer/aw-wizard/div/aw-wizard-step[5]/div/h1").isDisplayed()) {
+					.findElementByXPath("/html/body/app-root/external-app-offer/aw-wizard/div/aw-wizard-step[5]/div/h1")
+					.isDisplayed()) {
 				// Screen2.1: Privacy details of policy owner.
 				this.VarClass.wait.until(ExpectedConditions.visibilityOfElementLocated(
 						By.xpath("/html/body/app-root/external-app-offer/aw-wizard/div/aw-wizard-step[5]/div/h1")));
@@ -699,8 +752,8 @@ public class sanityAllOptionsTest {
 			// question for additional 2second driver:
 			TimeUnit.SECONDS.sleep(this.VarClass.waitBeforeClick);
 			if (Integer.parseInt(VarClass.numberOfDrivers) == 3) {
-				VarClass.wait.until(ExpectedConditions
-						.visibilityOfElementLocated(By.xpath("/html/body/app-root/external-app-offer/aw-wizard/div/aw-wizard-step[6]/div/h1")));
+				VarClass.wait.until(ExpectedConditions.visibilityOfElementLocated(
+						By.xpath("/html/body/app-root/external-app-offer/aw-wizard/div/aw-wizard-step[6]/div/h1")));
 				TimeUnit.SECONDS.sleep(2);
 				// if (VarClass.driver
 				// .findElementByXPath(
@@ -923,8 +976,7 @@ public class sanityAllOptionsTest {
 			VarClass.driver.findElementById("chk-step1-q0-idx1").click();
 
 			VarClass.driver.findElementById("chk-step1-q0-idx2").click();
-			
-			
+
 			System.out.println("Covers included:");
 			System.out.println("-------------------------");
 			System.out.println(VarClass.driver
@@ -1109,7 +1161,8 @@ public class sanityAllOptionsTest {
 
 			// screen2
 			TimeUnit.SECONDS.sleep(this.VarClass.waitBeforeClick + 1);
-			element = VarClass.driver.findElement(By.xpath("/html/body/app-root/app-offer/aw-wizard/div/aw-wizard-step[2]/div/app-step-content-vertical-options-view/ul/li[4]/label"));
+			element = VarClass.driver.findElement(By.xpath(
+					"/html/body/app-root/app-offer/aw-wizard/div/aw-wizard-step[2]/div/app-step-content-vertical-options-view/ul/li[4]/label"));
 			target = VarClass.driver.findElement(By.xpath("//button[@class='btn-toggle-accessibility-menu']//img"));
 			(new Actions(VarClass.driver)).dragAndDrop(element, target).perform();
 		} catch (Exception e) {
@@ -1202,7 +1255,10 @@ public class sanityAllOptionsTest {
 			// /html/body/app-root/external-app-offer/aw-wizard/div/aw-wizard-step[7]/div/div/button[1]
 			// screen2.5 (Approve V)
 			TimeUnit.SECONDS.sleep(this.VarClass.waitBeforeClick + 1);
-			VarClass.driver.findElementByXPath("/html/body/app-root/external-app-offer/aw-wizard/div/aw-wizard-step[8]/div/div/button[1]").click();
+			VarClass.driver
+					.findElementByXPath(
+							"/html/body/app-root/external-app-offer/aw-wizard/div/aw-wizard-step[8]/div/div/button[1]")
+					.click();
 			TimeUnit.SECONDS.sleep(10);
 
 			// finalOfferScreen:

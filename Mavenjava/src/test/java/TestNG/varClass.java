@@ -14,6 +14,8 @@ import java.util.logging.Level;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.logging.LogEntries;
+import org.openqa.selenium.logging.LogEntry;
 import org.openqa.selenium.logging.LogType;
 import org.openqa.selenium.logging.LoggingPreferences;
 import org.openqa.selenium.remote.CapabilityType;
@@ -202,7 +204,7 @@ public class varClass {
 					"C:\\Users\\amichaito\\Desktop\\chromedriver2\\chromedriver.exe");
 
 			// Define path to save screenShot of first screen (start date).
-			screenShotPath = "C:\\Users\\amichaito\\Desktop";
+			screenShotPath = "C:\\Users\\amichaito\\Desktop\\PangoError";
 
 			// Map<String, String> mobileEmulation = new HashMap<>();
 			// mobileEmulation.put("deviceName", "iPhone X");
@@ -211,34 +213,32 @@ public class varClass {
 
 			// options.addArguments("--window-size=320,900");
 
-			
-			
-
 			options = new ChromeOptions();
 			
 			//Save agent console logs
 	        LoggingPreferences logPrefs = new LoggingPreferences();
+	        logPrefs.enable(LogType.DRIVER, Level.ALL);
 	        logPrefs.enable(LogType.BROWSER, Level.ALL);
 	        options.setCapability(CapabilityType.LOGGING_PREFS, logPrefs);
 	        
-	        
-	        
-	        
+	        options.addArguments("--log-level=1");
 			options.addArguments("disable-infobars");
 			options.setExperimentalOption("useAutomationExtension", false);
 			options.setExperimentalOption("excludeSwitches",Collections.singletonList("enable-automation"));    
 			options.addArguments("--incognito");
 			//options.addArguments("--auto-open-devtools-for-tabs");
+
 			
 			driver = new ChromeDriver(options);
-
+			
+			
+			
 			driver.get(environmentURL);
 			driver.manage().window().setSize(windowDimension);
 			driver.manage().deleteAllCookies();
 			TimeUnit.SECONDS.sleep(waitBeforeClick);
 
 			// Extract URL for text.
-
 			String data = driver.findElementByTagName("body").getText();
 
 			if (environment.equals("local")) {
@@ -256,7 +256,9 @@ public class varClass {
 			panguGUID = pango.replaceAll("}", "").replaceAll("\"", "");
 			// Open URL with GUID
 			driver.get(httpOrHttps + panguGUID);
-
+			System.out.println("Final Url: " + httpOrHttps + panguGUID);
+			
+		
 			// DATE file format
 			Calendar cal = Calendar.getInstance();
 			cal.setTime(Date.from(Instant.now()));
