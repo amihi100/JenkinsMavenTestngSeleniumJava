@@ -158,6 +158,7 @@ public class sanityAllOptionsTest {
 						.sendKeys(errorsList.get(i) + "<br>");
 				
 			}
+			
 //			// logs into arrayList.
 //			LogEntries logEntries = VarClass.driver.manage().logs().get(LogType.BROWSER);
 //

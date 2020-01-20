@@ -7,6 +7,12 @@
       <class name="TestNG.sanityAllOptionsTest">
         <methods>
           <include name="forwardSteps"/>
+          <include name="returnSteps"/>
+          <include name="covers"/>
+          <include name="initialOfferScreen"/>
+          <include name="finalOfferScreen"/>
+          <include name="payments"/>
+          <include name="finalOfferQuestions"/>
         </methods>
       </class> <!-- TestNG.sanityAllOptionsTest -->
     </classes>
