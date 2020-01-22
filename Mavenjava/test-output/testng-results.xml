@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="7" ignored="5" total="13" passed="1">
+<testng-results skipped="6" failed="1" ignored="5" total="13" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Test-class Suite" duration-ms="223936" started-at="2020-01-22T12:37:29Z" finished-at="2020-01-22T12:41:13Z">
+  <suite name="Test-class Suite" duration-ms="157381" started-at="2020-01-22T13:51:27Z" finished-at="2020-01-22T13:54:04Z">
     <groups>
     </groups>
-    <test name="Test-class test 1 Production" duration-ms="223936" started-at="2020-01-22T12:37:29Z" finished-at="2020-01-22T12:41:13Z">
+    <test name="Test-class test 1 Production" duration-ms="157381" started-at="2020-01-22T13:51:27Z" finished-at="2020-01-22T13:54:04Z">
       <class name="TestNG.sanityAllOptionsTest">
-        <test-method status="PASS" signature="initialOfferQuestions()[pri:10, instance:TestNG.sanityAllOptionsTest@2cf3d63b]" name="initialOfferQuestions" duration-ms="59058" started-at="2020-01-22T12:37:29Z" finished-at="2020-01-22T12:38:28Z">
+        <test-method status="PASS" signature="initialOfferQuestions()[pri:10, instance:TestNG.sanityAllOptionsTest@2cf3d63b]" name="initialOfferQuestions" duration-ms="58917" started-at="2020-01-22T13:51:27Z" finished-at="2020-01-22T13:52:26Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialOfferQuestions -->
-        <test-method status="FAIL" signature="initialOfferScreen()[pri:30, instance:TestNG.sanityAllOptionsTest@2cf3d63b]" name="initialOfferScreen" duration-ms="98786" started-at="2020-01-22T12:38:28Z" finished-at="2020-01-22T12:40:07Z">
+        <test-method status="FAIL" signature="initialOfferScreen()[pri:30, instance:TestNG.sanityAllOptionsTest@2cf3d63b]" name="initialOfferScreen" duration-ms="98417" started-at="2020-01-22T13:52:26Z" depends-on-methods="TestNG.sanityAllOptionsTest.initialOfferQuestions" finished-at="2020-01-22T13:54:04Z">
           <exception class="java.lang.Exception">
             <message>
               <![CDATA[Failed in INITIAL OFFER SCREEN QUESTION]]>
             </message>
             <full-stacktrace>
               <![CDATA[java.lang.Exception: Failed in INITIAL OFFER SCREEN QUESTION
-at TestNG.sanityAllOptionsTest.initialOfferScreen(sanityAllOptionsTest.java:546)
+at TestNG.sanityAllOptionsTest.initialOfferScreen(sanityAllOptionsTest.java:540)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -45,23 +45,14 @@ at java.lang.Thread.run(Unknown Source)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialOfferScreen -->
-        <test-method status="FAIL" signature="finalOfferQuestions()[pri:40, instance:TestNG.sanityAllOptionsTest@2cf3d63b]" name="finalOfferQuestions" duration-ms="10005" started-at="2020-01-22T12:40:07Z" finished-at="2020-01-22T12:40:17Z">
-          <exception class="java.lang.Exception">
+        <test-method status="SKIP" signature="finalOfferQuestions()[pri:40, instance:TestNG.sanityAllOptionsTest@2cf3d63b]" name="finalOfferQuestions" duration-ms="0" started-at="2020-01-22T13:54:04Z" depends-on-methods="TestNG.sanityAllOptionsTest.initialOfferScreen" finished-at="2020-01-22T13:54:04Z">
+          <exception class="java.lang.Throwable">
             <message>
-              <![CDATA[Failed in ScreenShot]]>
+              <![CDATA[Method sanityAllOptionsTest.finalOfferQuestions()[pri:40, instance:TestNG.sanityAllOptionsTest@2cf3d63b] depends on not successfully finished methods]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.Exception: Failed in ScreenShot
-at TestNG.sanityAllOptionsTest.testException(sanityAllOptionsTest.java:135)
-at TestNG.sanityAllOptionsTest.finalOfferQuestions(sanityAllOptionsTest.java:781)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-at java.lang.reflect.Method.invoke(Unknown Source)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
-at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+              <![CDATA[java.lang.Throwable: Method sanityAllOptionsTest.finalOfferQuestions()[pri:40, instance:TestNG.sanityAllOptionsTest@2cf3d63b] depends on not successfully finished methods
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:888)
 at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
 at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
 at org.testng.TestRunner.privateRun(TestRunner.java:648)
@@ -76,27 +67,18 @@ at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
 at java.lang.Thread.run(Unknown Source)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.Exception -->
+          </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- finalOfferQuestions -->
-        <test-method status="FAIL" signature="finalOfferScreen()[pri:50, instance:TestNG.sanityAllOptionsTest@2cf3d63b]" name="finalOfferScreen" duration-ms="10006" started-at="2020-01-22T12:40:17Z" finished-at="2020-01-22T12:40:27Z">
-          <exception class="java.lang.Exception">
+        <test-method status="SKIP" signature="finalOfferScreen()[pri:50, instance:TestNG.sanityAllOptionsTest@2cf3d63b]" name="finalOfferScreen" duration-ms="0" started-at="2020-01-22T13:54:04Z" depends-on-methods="TestNG.sanityAllOptionsTest.initialOfferScreen" finished-at="2020-01-22T13:54:04Z">
+          <exception class="java.lang.Throwable">
             <message>
-              <![CDATA[Failed in ScreenShot]]>
+              <![CDATA[Method sanityAllOptionsTest.finalOfferScreen()[pri:50, instance:TestNG.sanityAllOptionsTest@2cf3d63b] depends on not successfully finished methods]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.Exception: Failed in ScreenShot
-at TestNG.sanityAllOptionsTest.testException(sanityAllOptionsTest.java:135)
-at TestNG.sanityAllOptionsTest.finalOfferScreen(sanityAllOptionsTest.java:843)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-at java.lang.reflect.Method.invoke(Unknown Source)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
-at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+              <![CDATA[java.lang.Throwable: Method sanityAllOptionsTest.finalOfferScreen()[pri:50, instance:TestNG.sanityAllOptionsTest@2cf3d63b] depends on not successfully finished methods
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:888)
 at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
 at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
 at org.testng.TestRunner.privateRun(TestRunner.java:648)
@@ -111,27 +93,18 @@ at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
 at java.lang.Thread.run(Unknown Source)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.Exception -->
+          </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- finalOfferScreen -->
-        <test-method status="FAIL" signature="covers()[pri:70, instance:TestNG.sanityAllOptionsTest@2cf3d63b]" name="covers" duration-ms="10006" started-at="2020-01-22T12:40:27Z" finished-at="2020-01-22T12:40:37Z">
-          <exception class="java.lang.Exception">
+        <test-method status="SKIP" signature="covers()[pri:70, instance:TestNG.sanityAllOptionsTest@2cf3d63b]" name="covers" duration-ms="0" started-at="2020-01-22T13:54:04Z" depends-on-methods="TestNG.sanityAllOptionsTest.initialOfferScreen" finished-at="2020-01-22T13:54:04Z">
+          <exception class="java.lang.Throwable">
             <message>
-              <![CDATA[Failed in ScreenShot]]>
+              <![CDATA[Method sanityAllOptionsTest.covers()[pri:70, instance:TestNG.sanityAllOptionsTest@2cf3d63b] depends on not successfully finished methods]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.Exception: Failed in ScreenShot
-at TestNG.sanityAllOptionsTest.testException(sanityAllOptionsTest.java:135)
-at TestNG.sanityAllOptionsTest.covers(sanityAllOptionsTest.java:919)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-at java.lang.reflect.Method.invoke(Unknown Source)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
-at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+              <![CDATA[java.lang.Throwable: Method sanityAllOptionsTest.covers()[pri:70, instance:TestNG.sanityAllOptionsTest@2cf3d63b] depends on not successfully finished methods
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:888)
 at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
 at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
 at org.testng.TestRunner.privateRun(TestRunner.java:648)
@@ -146,27 +119,18 @@ at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
 at java.lang.Thread.run(Unknown Source)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.Exception -->
+          </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- covers -->
-        <test-method status="FAIL" signature="payments()[pri:80, instance:TestNG.sanityAllOptionsTest@2cf3d63b]" name="payments" duration-ms="13004" started-at="2020-01-22T12:40:37Z" finished-at="2020-01-22T12:40:50Z">
-          <exception class="java.lang.Exception">
+        <test-method status="SKIP" signature="payments()[pri:80, instance:TestNG.sanityAllOptionsTest@2cf3d63b]" name="payments" duration-ms="0" started-at="2020-01-22T13:54:04Z" depends-on-methods="TestNG.sanityAllOptionsTest.initialOfferScreen" finished-at="2020-01-22T13:54:04Z">
+          <exception class="java.lang.Throwable">
             <message>
-              <![CDATA[Failed in ScreenShot]]>
+              <![CDATA[Method sanityAllOptionsTest.payments()[pri:80, instance:TestNG.sanityAllOptionsTest@2cf3d63b] depends on not successfully finished methods]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.Exception: Failed in ScreenShot
-at TestNG.sanityAllOptionsTest.testException(sanityAllOptionsTest.java:135)
-at TestNG.sanityAllOptionsTest.payments(sanityAllOptionsTest.java:963)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-at java.lang.reflect.Method.invoke(Unknown Source)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
-at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+              <![CDATA[java.lang.Throwable: Method sanityAllOptionsTest.payments()[pri:80, instance:TestNG.sanityAllOptionsTest@2cf3d63b] depends on not successfully finished methods
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:888)
 at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
 at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
 at org.testng.TestRunner.privateRun(TestRunner.java:648)
@@ -181,27 +145,18 @@ at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
 at java.lang.Thread.run(Unknown Source)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.Exception -->
+          </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- payments -->
-        <test-method status="FAIL" signature="returnSteps()[pri:85, instance:TestNG.sanityAllOptionsTest@2cf3d63b]" name="returnSteps" duration-ms="10008" started-at="2020-01-22T12:40:50Z" finished-at="2020-01-22T12:41:00Z">
-          <exception class="java.lang.Exception">
+        <test-method status="SKIP" signature="returnSteps()[pri:85, instance:TestNG.sanityAllOptionsTest@2cf3d63b]" name="returnSteps" duration-ms="0" started-at="2020-01-22T13:54:04Z" depends-on-methods="TestNG.sanityAllOptionsTest.initialOfferScreen" finished-at="2020-01-22T13:54:04Z">
+          <exception class="java.lang.Throwable">
             <message>
-              <![CDATA[Failed in ScreenShot]]>
+              <![CDATA[Method sanityAllOptionsTest.returnSteps()[pri:85, instance:TestNG.sanityAllOptionsTest@2cf3d63b] depends on not successfully finished methods]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.Exception: Failed in ScreenShot
-at TestNG.sanityAllOptionsTest.testException(sanityAllOptionsTest.java:135)
-at TestNG.sanityAllOptionsTest.returnSteps(sanityAllOptionsTest.java:1091)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-at java.lang.reflect.Method.invoke(Unknown Source)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
-at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+              <![CDATA[java.lang.Throwable: Method sanityAllOptionsTest.returnSteps()[pri:85, instance:TestNG.sanityAllOptionsTest@2cf3d63b] depends on not successfully finished methods
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:888)
 at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
 at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
 at org.testng.TestRunner.privateRun(TestRunner.java:648)
@@ -216,27 +171,18 @@ at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
 at java.lang.Thread.run(Unknown Source)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.Exception -->
+          </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- returnSteps -->
-        <test-method status="FAIL" signature="forwardSteps()[pri:86, instance:TestNG.sanityAllOptionsTest@2cf3d63b]" name="forwardSteps" duration-ms="13009" started-at="2020-01-22T12:41:00Z" finished-at="2020-01-22T12:41:13Z">
-          <exception class="java.lang.Exception">
+        <test-method status="SKIP" signature="forwardSteps()[pri:86, instance:TestNG.sanityAllOptionsTest@2cf3d63b]" name="forwardSteps" duration-ms="0" started-at="2020-01-22T13:54:04Z" depends-on-methods="TestNG.sanityAllOptionsTest.initialOfferScreen" finished-at="2020-01-22T13:54:04Z">
+          <exception class="java.lang.Throwable">
             <message>
-              <![CDATA[Failed in ScreenShot]]>
+              <![CDATA[Method sanityAllOptionsTest.forwardSteps()[pri:86, instance:TestNG.sanityAllOptionsTest@2cf3d63b] depends on not successfully finished methods]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.Exception: Failed in ScreenShot
-at TestNG.sanityAllOptionsTest.testException(sanityAllOptionsTest.java:135)
-at TestNG.sanityAllOptionsTest.forwardSteps(sanityAllOptionsTest.java:1200)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-at java.lang.reflect.Method.invoke(Unknown Source)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
-at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+              <![CDATA[java.lang.Throwable: Method sanityAllOptionsTest.forwardSteps()[pri:86, instance:TestNG.sanityAllOptionsTest@2cf3d63b] depends on not successfully finished methods
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:888)
 at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
 at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
 at org.testng.TestRunner.privateRun(TestRunner.java:648)
@@ -251,7 +197,7 @@ at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
 at java.lang.Thread.run(Unknown Source)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.Exception -->
+          </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- forwardSteps -->

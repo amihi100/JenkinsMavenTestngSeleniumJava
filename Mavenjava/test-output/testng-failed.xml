@@ -8,6 +8,7 @@
         <methods>
           <include name="forwardSteps"/>
           <include name="returnSteps"/>
+          <include name="initialOfferQuestions"/>
           <include name="covers"/>
           <include name="initialOfferScreen"/>
           <include name="finalOfferScreen"/>

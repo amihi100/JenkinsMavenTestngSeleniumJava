@@ -4,49 +4,48 @@ package TestNG;
  * amihi100@gmail.com
  * Version 1.3
  */
-
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.PrintStream;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.InvalidPropertiesFormatException;
-import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 import org.apache.commons.io.FileUtils;
-import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 import org.openqa.selenium.By;
 import org.openqa.selenium.By.ByXPath;
-import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.logging.LogEntries;
 import org.openqa.selenium.logging.LogEntry;
-import org.openqa.selenium.logging.LogType;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
-import com.google.errorprone.annotations.Var;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.testng.SkipException;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
+//import java.io.PrintStream;
+//import java.text.DateFormat;
+//import java.text.SimpleDateFormat;
+//import java.io.FileOutputStream;
+//import java.util.Date;
+//import java.util.Scanner;
+//import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
+//import org.openqa.selenium.Dimension;
+//import org.openqa.selenium.Keys;
+//import org.openqa.selenium.logging.LogType;
+//import com.google.errorprone.annotations.Var;
+//import org.openqa.selenium.chrome.ChromeOptions;
+//import org.testng.SkipException;
+//import org.testng.annotations.BeforeMethod;
 //import com.google.common.base.Stopwatch;
 
 /**
@@ -69,6 +68,8 @@ public class sanityAllOptionsTest {
 		}
 	}
 
+	
+	
 	java.util.Date dateTime = new java.util.Date();
 	varClass VarClass;
 
@@ -405,7 +406,7 @@ public class sanityAllOptionsTest {
 	}
 
 	@Test(enabled = false)
-	// @Test(priority = 20)
+	// @Test(priority = 20, dependsOnMethods="initialOfferQuestions")
 	public void callMeWizard1() throws Exception {
 		try {
 
@@ -452,7 +453,7 @@ public class sanityAllOptionsTest {
 		}
 	}
 
-	@Test(priority = 30)
+	@Test(priority = 30, dependsOnMethods="initialOfferQuestions")
 	public void initialOfferScreen() throws Exception {
 		try {
 			TimeUnit.SECONDS.sleep(2);
@@ -540,7 +541,7 @@ public class sanityAllOptionsTest {
 		}
 	}
 
-	@Test(priority = 40)
+	@Test(priority = 40, dependsOnMethods="initialOfferScreen")
 	public void finalOfferQuestions() throws Exception {
 		// FINAL OFFER SCREENS QUESTIONS.
 		try {
@@ -776,7 +777,7 @@ public class sanityAllOptionsTest {
 		}
 	}
 
-	@Test(priority = 50)
+	@Test(priority = 50, dependsOnMethods="initialOfferScreen")
 	public void finalOfferScreen() throws Exception {
 		try {
 			// Screen: Final offer!
@@ -839,7 +840,7 @@ public class sanityAllOptionsTest {
 	}
 
 	@Test(enabled = false)
-	// @Test(priority = 60)
+	// @Test(priority = 60, dependsOnMethods="initialOfferScreen")
 	public void callMeWizard2() throws Exception {
 		try {
 			// Call me back function Wizard #2.
@@ -876,7 +877,7 @@ public class sanityAllOptionsTest {
 		}
 	}
 
-	@Test(priority = 70)
+	@Test(priority = 70, dependsOnMethods="initialOfferScreen")
 	public void covers() throws Exception {
 		try {
 			// Screen: Covers.
@@ -914,7 +915,7 @@ public class sanityAllOptionsTest {
 		}
 	}
 
-	@Test(priority = 80)
+	@Test(priority = 80, dependsOnMethods="initialOfferScreen")
 	public void payments() throws Exception {
 		try {
 			TimeUnit.SECONDS.sleep(this.VarClass.waitBeforeClick);
@@ -958,7 +959,7 @@ public class sanityAllOptionsTest {
 		}
 	}
 
-	@Test(priority = 85)
+	@Test(priority = 85, dependsOnMethods="initialOfferScreen")
 	public void returnSteps() throws Exception {
 		try {
 
@@ -1086,7 +1087,7 @@ public class sanityAllOptionsTest {
 		}
 	}
 
-	@Test(priority = 86)
+	@Test(priority = 86, dependsOnMethods="initialOfferScreen")
 	public void forwardSteps() throws Exception {
 		try {
 
@@ -1196,7 +1197,7 @@ public class sanityAllOptionsTest {
 	}
 
 	@Test(enabled = false)
-	// @Test(priority = 90)
+	// @Test(priority = 90, dependsOnMethods="initialOfferScreen")
 	public void iframeCreditGuard() throws Exception {
 		// Screen: CreditGuard
 		try {
@@ -1245,7 +1246,7 @@ public class sanityAllOptionsTest {
 	}
 
 	@Test(enabled = false)
-	// @Test(priority = 100)
+	// @Test(priority = 100, dependsOnMethods="initialOfferScreen")
 	public void thankYouPage() throws Exception {
 		try {
 			TimeUnit.SECONDS.sleep(5);
@@ -1261,9 +1262,9 @@ public class sanityAllOptionsTest {
 			throw new Exception("Failed to display thank you page");
 		}
 	}
-
+	
 	@Test(enabled = false)
-	// @Test(priority = 110)
+	// @Test(priority = 110, dependsOnMethods="initialOfferScreen")
 	public void registeredAccount() throws Exception {
 		TimeUnit.SECONDS.sleep(3);
 		try {
