@@ -2,23 +2,23 @@
 <testng-results skipped="0" failed="7" ignored="5" total="13" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Test-class Suite" duration-ms="240584" started-at="2020-01-20T13:58:08Z" finished-at="2020-01-20T14:02:09Z">
+  <suite name="Test-class Suite" duration-ms="223936" started-at="2020-01-22T12:37:29Z" finished-at="2020-01-22T12:41:13Z">
     <groups>
     </groups>
-    <test name="Test-class test 2 red1years" duration-ms="240584" started-at="2020-01-20T13:58:08Z" finished-at="2020-01-20T14:02:09Z">
+    <test name="Test-class test 1 Production" duration-ms="223936" started-at="2020-01-22T12:37:29Z" finished-at="2020-01-22T12:41:13Z">
       <class name="TestNG.sanityAllOptionsTest">
-        <test-method status="PASS" signature="initialOfferQuestions()[pri:10, instance:TestNG.sanityAllOptionsTest@2cf3d63b]" name="initialOfferQuestions" duration-ms="62902" started-at="2020-01-20T13:58:08Z" finished-at="2020-01-20T13:59:11Z">
+        <test-method status="PASS" signature="initialOfferQuestions()[pri:10, instance:TestNG.sanityAllOptionsTest@2cf3d63b]" name="initialOfferQuestions" duration-ms="59058" started-at="2020-01-22T12:37:29Z" finished-at="2020-01-22T12:38:28Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialOfferQuestions -->
-        <test-method status="FAIL" signature="initialOfferScreen()[pri:30, instance:TestNG.sanityAllOptionsTest@2cf3d63b]" name="initialOfferScreen" duration-ms="111619" started-at="2020-01-20T13:59:11Z" finished-at="2020-01-20T14:01:03Z">
+        <test-method status="FAIL" signature="initialOfferScreen()[pri:30, instance:TestNG.sanityAllOptionsTest@2cf3d63b]" name="initialOfferScreen" duration-ms="98786" started-at="2020-01-22T12:38:28Z" finished-at="2020-01-22T12:40:07Z">
           <exception class="java.lang.Exception">
             <message>
               <![CDATA[Failed in INITIAL OFFER SCREEN QUESTION]]>
             </message>
             <full-stacktrace>
               <![CDATA[java.lang.Exception: Failed in INITIAL OFFER SCREEN QUESTION
-at TestNG.sanityAllOptionsTest.initialOfferScreen(sanityAllOptionsTest.java:610)
+at TestNG.sanityAllOptionsTest.initialOfferScreen(sanityAllOptionsTest.java:546)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -45,15 +45,15 @@ at java.lang.Thread.run(Unknown Source)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialOfferScreen -->
-        <test-method status="FAIL" signature="finalOfferQuestions()[pri:40, instance:TestNG.sanityAllOptionsTest@2cf3d63b]" name="finalOfferQuestions" duration-ms="10002" started-at="2020-01-20T14:01:03Z" finished-at="2020-01-20T14:01:13Z">
+        <test-method status="FAIL" signature="finalOfferQuestions()[pri:40, instance:TestNG.sanityAllOptionsTest@2cf3d63b]" name="finalOfferQuestions" duration-ms="10005" started-at="2020-01-22T12:40:07Z" finished-at="2020-01-22T12:40:17Z">
           <exception class="java.lang.Exception">
             <message>
               <![CDATA[Failed in ScreenShot]]>
             </message>
             <full-stacktrace>
               <![CDATA[java.lang.Exception: Failed in ScreenShot
-at TestNG.sanityAllOptionsTest.emailException(sanityAllOptionsTest.java:126)
-at TestNG.sanityAllOptionsTest.finalOfferQuestions(sanityAllOptionsTest.java:857)
+at TestNG.sanityAllOptionsTest.testException(sanityAllOptionsTest.java:135)
+at TestNG.sanityAllOptionsTest.finalOfferQuestions(sanityAllOptionsTest.java:781)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -80,15 +80,15 @@ at java.lang.Thread.run(Unknown Source)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- finalOfferQuestions -->
-        <test-method status="FAIL" signature="finalOfferScreen()[pri:50, instance:TestNG.sanityAllOptionsTest@2cf3d63b]" name="finalOfferScreen" duration-ms="10004" started-at="2020-01-20T14:01:13Z" finished-at="2020-01-20T14:01:23Z">
+        <test-method status="FAIL" signature="finalOfferScreen()[pri:50, instance:TestNG.sanityAllOptionsTest@2cf3d63b]" name="finalOfferScreen" duration-ms="10006" started-at="2020-01-22T12:40:17Z" finished-at="2020-01-22T12:40:27Z">
           <exception class="java.lang.Exception">
             <message>
               <![CDATA[Failed in ScreenShot]]>
             </message>
             <full-stacktrace>
               <![CDATA[java.lang.Exception: Failed in ScreenShot
-at TestNG.sanityAllOptionsTest.emailException(sanityAllOptionsTest.java:126)
-at TestNG.sanityAllOptionsTest.finalOfferScreen(sanityAllOptionsTest.java:919)
+at TestNG.sanityAllOptionsTest.testException(sanityAllOptionsTest.java:135)
+at TestNG.sanityAllOptionsTest.finalOfferScreen(sanityAllOptionsTest.java:843)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -115,15 +115,15 @@ at java.lang.Thread.run(Unknown Source)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- finalOfferScreen -->
-        <test-method status="FAIL" signature="covers()[pri:70, instance:TestNG.sanityAllOptionsTest@2cf3d63b]" name="covers" duration-ms="10003" started-at="2020-01-20T14:01:23Z" finished-at="2020-01-20T14:01:33Z">
+        <test-method status="FAIL" signature="covers()[pri:70, instance:TestNG.sanityAllOptionsTest@2cf3d63b]" name="covers" duration-ms="10006" started-at="2020-01-22T12:40:27Z" finished-at="2020-01-22T12:40:37Z">
           <exception class="java.lang.Exception">
             <message>
               <![CDATA[Failed in ScreenShot]]>
             </message>
             <full-stacktrace>
               <![CDATA[java.lang.Exception: Failed in ScreenShot
-at TestNG.sanityAllOptionsTest.emailException(sanityAllOptionsTest.java:126)
-at TestNG.sanityAllOptionsTest.covers(sanityAllOptionsTest.java:998)
+at TestNG.sanityAllOptionsTest.testException(sanityAllOptionsTest.java:135)
+at TestNG.sanityAllOptionsTest.covers(sanityAllOptionsTest.java:919)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -150,15 +150,15 @@ at java.lang.Thread.run(Unknown Source)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- covers -->
-        <test-method status="FAIL" signature="payments()[pri:80, instance:TestNG.sanityAllOptionsTest@2cf3d63b]" name="payments" duration-ms="13002" started-at="2020-01-20T14:01:33Z" finished-at="2020-01-20T14:01:46Z">
+        <test-method status="FAIL" signature="payments()[pri:80, instance:TestNG.sanityAllOptionsTest@2cf3d63b]" name="payments" duration-ms="13004" started-at="2020-01-22T12:40:37Z" finished-at="2020-01-22T12:40:50Z">
           <exception class="java.lang.Exception">
             <message>
               <![CDATA[Failed in ScreenShot]]>
             </message>
             <full-stacktrace>
               <![CDATA[java.lang.Exception: Failed in ScreenShot
-at TestNG.sanityAllOptionsTest.emailException(sanityAllOptionsTest.java:126)
-at TestNG.sanityAllOptionsTest.payments(sanityAllOptionsTest.java:1042)
+at TestNG.sanityAllOptionsTest.testException(sanityAllOptionsTest.java:135)
+at TestNG.sanityAllOptionsTest.payments(sanityAllOptionsTest.java:963)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -185,15 +185,15 @@ at java.lang.Thread.run(Unknown Source)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- payments -->
-        <test-method status="FAIL" signature="returnSteps()[pri:85, instance:TestNG.sanityAllOptionsTest@2cf3d63b]" name="returnSteps" duration-ms="10004" started-at="2020-01-20T14:01:46Z" finished-at="2020-01-20T14:01:56Z">
+        <test-method status="FAIL" signature="returnSteps()[pri:85, instance:TestNG.sanityAllOptionsTest@2cf3d63b]" name="returnSteps" duration-ms="10008" started-at="2020-01-22T12:40:50Z" finished-at="2020-01-22T12:41:00Z">
           <exception class="java.lang.Exception">
             <message>
               <![CDATA[Failed in ScreenShot]]>
             </message>
             <full-stacktrace>
               <![CDATA[java.lang.Exception: Failed in ScreenShot
-at TestNG.sanityAllOptionsTest.emailException(sanityAllOptionsTest.java:126)
-at TestNG.sanityAllOptionsTest.returnSteps(sanityAllOptionsTest.java:1170)
+at TestNG.sanityAllOptionsTest.testException(sanityAllOptionsTest.java:135)
+at TestNG.sanityAllOptionsTest.returnSteps(sanityAllOptionsTest.java:1091)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -220,15 +220,15 @@ at java.lang.Thread.run(Unknown Source)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- returnSteps -->
-        <test-method status="FAIL" signature="forwardSteps()[pri:86, instance:TestNG.sanityAllOptionsTest@2cf3d63b]" name="forwardSteps" duration-ms="13002" started-at="2020-01-20T14:01:56Z" finished-at="2020-01-20T14:02:09Z">
+        <test-method status="FAIL" signature="forwardSteps()[pri:86, instance:TestNG.sanityAllOptionsTest@2cf3d63b]" name="forwardSteps" duration-ms="13009" started-at="2020-01-22T12:41:00Z" finished-at="2020-01-22T12:41:13Z">
           <exception class="java.lang.Exception">
             <message>
               <![CDATA[Failed in ScreenShot]]>
             </message>
             <full-stacktrace>
               <![CDATA[java.lang.Exception: Failed in ScreenShot
-at TestNG.sanityAllOptionsTest.emailException(sanityAllOptionsTest.java:126)
-at TestNG.sanityAllOptionsTest.forwardSteps(sanityAllOptionsTest.java:1279)
+at TestNG.sanityAllOptionsTest.testException(sanityAllOptionsTest.java:135)
+at TestNG.sanityAllOptionsTest.forwardSteps(sanityAllOptionsTest.java:1200)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -256,6 +256,6 @@ at java.lang.Thread.run(Unknown Source)
           </reporter-output>
         </test-method> <!-- forwardSteps -->
       </class> <!-- TestNG.sanityAllOptionsTest -->
-    </test> <!-- Test-class test 2 red1years -->
+    </test> <!-- Test-class test 1 Production -->
   </suite> <!-- Test-class Suite -->
 </testng-results>

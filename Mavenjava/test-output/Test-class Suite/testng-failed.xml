@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="1" guice-stage="DEVELOPMENT" name="Failed suite [Test-class Suite]" parallel="tests">
-  <test thread-count="1" name="Test-class test 2 red1years(failed)" parallel="tests">
+<suite thread-count="2" guice-stage="DEVELOPMENT" name="Failed suite [Test-class Suite]" parallel="tests">
+  <test thread-count="2" name="Test-class test 1 Production(failed)" parallel="tests">
     <parameter name="xml" value="dev"/>
     <classes>
       <class name="TestNG.sanityAllOptionsTest">
@@ -16,5 +16,5 @@
         </methods>
       </class> <!-- TestNG.sanityAllOptionsTest -->
     </classes>
-  </test> <!-- Test-class test 2 red1years(failed) -->
+  </test> <!-- Test-class test 1 Production(failed) -->
 </suite> <!-- Failed suite [Test-class Suite] -->

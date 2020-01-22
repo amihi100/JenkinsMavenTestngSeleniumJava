@@ -31,20 +31,18 @@ import org.testng.Reporter;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 public class varClass {
 
-	
-	public String redPath, environmentURL, environment, panguGUID, carNumber, startInsuranceDate, numberOfDrivers, youngestDriverAge, drivingYears,
-			mortgageCar, yearsOfInsurance, claimsIn3Years, howManyClaims, restrictions, screenShotPath, filename,
-			insuredName, insuredLastName, insuredIdDriver, genderPolicyOwner, insuredBirthDate, insuredLicenseIssueYear,
-			city, street, houseNumber, email, cellphone, wizardPhone0, wizardPhone1, driver1Name, driver1LastName,
-			driver1Id, driver1BirthDate, driver2Name, driver2LastName, driver2Id, driver2BirthDate,
-			driver2LicenseIssueYear,criminalAndRefuse, cardNumber, cardPersonalId, driver1LicenseIssueYear, cardFullName, cardMonth,
-			cardYear, localApp, httpOrHttps;
+	public String redPath, environmentURL, environment, panguGUID, carNumber, startInsuranceDate, numberOfDrivers,
+			youngestDriverAge, drivingYears, mortgageCar, yearsOfInsurance, claimsIn3Years, howManyClaims, restrictions,
+			LogAndScreenShotPath, filename, insuredName, insuredLastName, insuredIdDriver, genderPolicyOwner,
+			insuredBirthDate, insuredLicenseIssueYear, city, street, houseNumber, email, cellphone, wizardPhone0,
+			wizardPhone1, driver1Name, driver1LastName, driver1Id, driver1BirthDate, driver2Name, driver2LastName,
+			driver2Id, driver2BirthDate, driver2LicenseIssueYear, criminalAndRefuse, cardNumber, cardPersonalId,
+			driver1LicenseIssueYear, cardFullName, cardMonth, cardYear, localApp, httpOrHttps, generatedUrlData;
 
 	public boolean appID;
 	public String thankYouURL;
@@ -53,13 +51,14 @@ public class varClass {
 	public ChromeOptions options;
 	ChromeDriver driver;
 
-	//TODO: WHAT IS WAIT?
-	
+	// TODO: WHAT IS WAIT?
+
 	WebDriverWait wait;
+
 	public void setWaitClass(WebDriverWait wait) {
 		wait = wait;
 	}
-	
+
 //    @Parameters(value="env")
 //    @Test
 //    public void t1(String desc) {
@@ -67,30 +66,29 @@ public class varClass {
 //    }
 
 	// @Test(priority = 0, groups={"varClass.defineVariables"})
-	@Parameters({"xml", "env"})
+	@Parameters({ "xml", "env" })
 	public void defineVariables(String xml) throws Exception {
-    	
+
 		try {
-			
+
 			Properties varProps = new Properties();
 			windowDimension = new Dimension(372, 900);
 			String dir = System.getProperty("user.dir");
 			System.out.println("current dir = " + dir);
 			String rootPath = Thread.currentThread().getContextClassLoader().getResource("").getPath();
 			System.out.println("Root path:" + rootPath);
-			
 
-			//TODO:
-			//David:
-			//String filePath = MessageFormat.format("{0}\\configXml\\{1}\\config.{2}.xml", dir, xml);
+			// TODO:
+			// David:
+			// String filePath = MessageFormat.format("{0}\\configXml\\{1}\\config.{2}.xml",
+			// dir, xml);
 			String filePath = MessageFormat.format("{0}\\configXml\\config.{1}.xml", dir, xml);
-			System.out.println("xml file path: "+ filePath);
-			
+			System.out.println("xml file path: " + filePath);
+
 			varProps.loadFromXML(new FileInputStream(filePath));
 			redPath = varProps.getProperty("redPath");
-			System.out.println("redpath: "+ varProps.getProperty("redPath"));
-			
-		
+			System.out.println("redpath: " + varProps.getProperty("redPath"));
+
 //
 //			System.out.println(1);
 //			System.out.println("redpath: "+ varProps.getProperty("redPath"));
@@ -124,7 +122,6 @@ public class varClass {
 			// environmentURL = "https://" + varProps.getProperty("environment")+
 			// ".pango-ins.co.il/api/test/url?ln=" + carNumber + "&ui=" + UUID.randomUUID();
 
-		    
 			environment = varProps.getProperty("environment");
 
 			// System.out.println("First URL: "+ environment);
@@ -182,8 +179,8 @@ public class varClass {
 			driver2Id = varProps.getProperty("driver2Id");
 			driver2BirthDate = varProps.getProperty("driver2BirthDate");
 			driver2LicenseIssueYear = varProps.getProperty("driver2LicenseIssueYear");
-			
-			//redPath final offer criminalAndRefuse:
+
+			// redPath final offer criminalAndRefuse:
 			criminalAndRefuse = varProps.getProperty("criminalAndRefuse");
 
 			// CreditGaurd details
@@ -192,19 +189,19 @@ public class varClass {
 			cardNumber = varProps.getProperty("cardNumber");
 			cardMonth = varProps.getProperty("cardMonth");
 			cardYear = varProps.getProperty("cardYear");
-			
+
 			// Define path of chromedriver.exe file.
 			// System.setProperty("webdriver.chrome.driver",
 			// "C:\\Users\\amichaito\\Desktop\\Code\\Selenium\\PangoAPP\\chromedriver.exe");
 
 			// C:\Users\amichaito\Desktop\chromedriver_win32\chromedriver.exe
 
-			//TODO change this path if running with another machine.
+			// TODO change this path if running with another machine.
 			System.setProperty("webdriver.chrome.driver",
 					"C:\\Users\\amichaito\\Desktop\\chromedriver2\\chromedriver.exe");
 
 			// Define path to save screenShot of first screen (start date).
-			screenShotPath = "C:\\Users\\amichaito\\Desktop\\PangoError";
+			LogAndScreenShotPath = "C:\\Users\\amichaito\\Desktop\\PangoErrorLogs";
 
 			// Map<String, String> mobileEmulation = new HashMap<>();
 			// mobileEmulation.put("deviceName", "iPhone X");
@@ -214,32 +211,30 @@ public class varClass {
 			// options.addArguments("--window-size=320,900");
 
 			options = new ChromeOptions();
-			
-			//Save agent console logs
-	        LoggingPreferences logPrefs = new LoggingPreferences();
-	        logPrefs.enable(LogType.DRIVER, Level.ALL);
-	        logPrefs.enable(LogType.BROWSER, Level.ALL);
-	        options.setCapability(CapabilityType.LOGGING_PREFS, logPrefs);
-	        
-	        options.addArguments("--log-level=1");
+
+			// Save agent console logs
+			LoggingPreferences logPrefs = new LoggingPreferences();
+			logPrefs.enable(LogType.DRIVER, Level.ALL);
+			logPrefs.enable(LogType.BROWSER, Level.ALL);
+			options.setCapability(CapabilityType.LOGGING_PREFS, logPrefs);
+
+			options.addArguments("--log-level=1");
 			options.addArguments("disable-infobars");
 			options.setExperimentalOption("useAutomationExtension", false);
-			options.setExperimentalOption("excludeSwitches",Collections.singletonList("enable-automation"));    
+			options.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
 			options.addArguments("--incognito");
-			//options.addArguments("--auto-open-devtools-for-tabs");
+			// options.addArguments("--auto-open-devtools-for-tabs");
 
-			
 			driver = new ChromeDriver(options);
-			
-			
-			
+
 			driver.get(environmentURL);
 			driver.manage().window().setSize(windowDimension);
 			driver.manage().deleteAllCookies();
 			TimeUnit.SECONDS.sleep(waitBeforeClick);
 
 			// Extract URL for text.
-			String data = driver.findElementByTagName("body").getText();
+			generatedUrlData = driver.findElementByTagName("body").getText();
+			System.out.println("Generated Url Data: " + generatedUrlData);
 
 			if (environment.equals("local")) {
 				httpOrHttps = "http://";
@@ -247,7 +242,7 @@ public class varClass {
 				httpOrHttps = "https://";
 			}
 
-			String[] arr = data.split(httpOrHttps);
+			String[] arr = generatedUrlData.split(httpOrHttps);
 			String pango = "";
 			for (String ss : arr) {
 				pango = ss;
@@ -257,8 +252,7 @@ public class varClass {
 			// Open URL with GUID
 			driver.get(httpOrHttps + panguGUID);
 			System.out.println("Final Url: " + httpOrHttps + panguGUID);
-			
-		
+
 			// DATE file format
 			Calendar cal = Calendar.getInstance();
 			cal.setTime(Date.from(Instant.now()));

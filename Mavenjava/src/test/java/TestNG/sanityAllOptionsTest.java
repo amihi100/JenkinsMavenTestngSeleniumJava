@@ -5,10 +5,14 @@ package TestNG;
  * Version 1.3
  */
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.PrintStream;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -21,7 +25,6 @@ import java.util.InvalidPropertiesFormatException;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 import org.apache.commons.io.FileUtils;
-//import org.apache.tools.ant.taskdefs.Definer.Format;
 import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 import org.openqa.selenium.By;
 import org.openqa.selenium.By.ByXPath;
@@ -41,6 +44,8 @@ import com.google.errorprone.annotations.Var;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.SkipException;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 //import com.google.common.base.Stopwatch;
 
@@ -75,6 +80,7 @@ public class sanityAllOptionsTest {
 	 * startDateDay = 19;
 	 * 
 	 */
+
 	// Start insurance at the same day.
 	int startDateYear = Calendar.getInstance().get(Calendar.YEAR);
 	// static int startDateMonth = Calendar.getInstance().get(Calendar.MONTH)+9;
@@ -84,51 +90,46 @@ public class sanityAllOptionsTest {
 	String dateWithZero;
 	String numOfDrivers = "";
 
-//	public void printLogJS() {
-//		
-//		
-////		JavascriptExecutor jsLog = (JavascriptExecutor) VarClass.driver;
-////		jsLog.executeScript("console.stdlog = console.log.bind(console)");
-////		JavascriptExecutor jsLog2 = (JavascriptExecutor) VarClass.driver;
-////		jsLog.executeScript("console.logs = []");
-////		
-//		
-////		console.log = function(){
-////		    console.logs.push(Array.from(arguments));
-////		    console.stdlog.apply(console, arguments);
-////		}
-////	}
+	public void saveLogToTXT() throws IOException {
+		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter out = new BufferedWriter(new FileWriter(
+				VarClass.LogAndScreenShotPath + "\\" + VarClass.environment + VarClass.filename + ".txt"));
+		try {
+			String inputLine = VarClass.generatedUrlData;
+			out.write(inputLine);
+			System.out.print("Write to log file.txt successful");
+		} catch (IOException e1) {
+			System.out.println("Error during reading/writing");
+		} finally {
+			out.close();
+			in.close();
+		}
 
-	public void emailException() throws Exception {
+	}
+
+	public void testException() throws Exception {
 		ArrayList<String> errorsList = new ArrayList<String>();
-
 		TimeUnit.SECONDS.sleep(this.VarClass.waitBeforeClick + 7);
+
 		try {
 			// FullScreen:
 //			Dimension windowDimension2;
 //			windowDimension2 = new Dimension(1080, 1920);
-
 			// Try ScreenShot:
 			File scrFile = ((TakesScreenshot) VarClass.driver).getScreenshotAs(OutputType.FILE);
 			// Now copy .jpeg to screenShotPath
 			scrFile = ((TakesScreenshot) VarClass.driver).getScreenshotAs(OutputType.FILE);
-			FileUtils.copyFile(scrFile,
-					new File(VarClass.screenShotPath + "\\" + VarClass.environment + VarClass.filename + ".jpeg"));
+			FileUtils.copyFile(scrFile, new File(
+					VarClass.LogAndScreenShotPath + "\\" + VarClass.environment + VarClass.filename + ".jpeg"));
 			TimeUnit.SECONDS.sleep(this.VarClass.waitBeforeClick);
-
-//			File scrFile = ((TakesScreenshot) VarClass.driver).getScreenshotAs(OutputType.FILE);
-//			// Now copy .jpeg to screenShotPath
-//			scrFile=((TakesScreenshot)VarClass.driver).getScreenshotAs(OutputType.FILE);
-//			FileUtils.copyFile(scrFile,new File(VarClass.screenShotPath+"\\"+VarClass.environment+VarClass.filename+".jpeg"));
 
 		} catch (Exception e) {
 			e.printStackTrace();
 			throw new Exception("Failed in ScreenShot");
 		}
-
 		try {
+			// Wait +7 seconds for iiii site.
 			TimeUnit.SECONDS.sleep(this.VarClass.waitBeforeClick + 7);
-
 			// Print logs from console (Warnings and Errors ONLY!)
 			System.out.println("Errors logs:");
 			LogEntries logs = VarClass.driver.manage().logs().get("browser");
@@ -139,10 +140,8 @@ public class sanityAllOptionsTest {
 			;
 
 			// Email:
-
 			VarClass.driver.get("https://iiii.co.il/#contact");
-			// Wait +7 seconds for iiii site.
-
+			TimeUnit.SECONDS.sleep(this.VarClass.waitBeforeClick + 5);
 			VarClass.driver.findElementByXPath("//input[@placeholder='Your name']")
 					.sendKeys(VarClass.environment + " Error");
 			TimeUnit.MILLISECONDS.sleep(VarClass.MILLISECONDS);
@@ -153,44 +152,32 @@ public class sanityAllOptionsTest {
 					.sendKeys(VarClass.environment + " Error");
 			TimeUnit.MILLISECONDS.sleep(VarClass.MILLISECONDS);
 
+			//////////////////// NEW/////////////////
+			// Send userID and pid:
+			VarClass.driver.findElementByXPath("//textarea[@placeholder='Message']")
+					.sendKeys(VarClass.generatedUrlData + "<br>");
+			// Send Warnings and Errors ONLY!:
+			System.out.println("Here are logs in Message email: ");
 			for (int i = 0; i < errorsList.size(); i++) {
+				System.out.println(errorsList.get(i));
 				VarClass.driver.findElementByXPath("//textarea[@placeholder='Message']")
-						.sendKeys(errorsList.get(i) + "<br>");
-				
+						.sendKeys(errorsList.get(i) + "</br>");
 			}
-			
-//			// logs into arrayList.
-//			LogEntries logEntries = VarClass.driver.manage().logs().get(LogType.BROWSER);
-//
-//			String logLine;
-//			for (LogEntry entry : logEntries) {
-//				logLine = new Date(entry.getTimestamp()) + " " + entry.getLevel() + " " + entry.getMessage();
-//				System.out.println(logLine);
-//
-//				VarClass.driver.findElementByXPath("//textarea[@placeholder='Message']").sendKeys(logLine + "<br>");
-//
-//				VarClass.driver.findElementByXPath("//textarea[@placeholder='Message']")
-//						.sendKeys(VarClass.driver.manage().logs().get("browser").toString() + "<br>");
-//				//LogEntries logs = VarClass.driver.manage().logs().get("browser");
-//				System.out.println(VarClass.driver.manage().logs().get("browser"));
-//			}
-//
-//			System.out.println(VarClass.driver.manage().logs().get("browser"));
-//			VarClass.driver.findElementByXPath("//textarea[@placeholder='Message']")
-//					.sendKeys(VarClass.driver.manage().logs().get("browser") + "<br>");
-			TimeUnit.MILLISECONDS.sleep(VarClass.MILLISECONDS);
+			;
+			TimeUnit.SECONDS.sleep(this.VarClass.waitBeforeClick + 4);
+			;
 			VarClass.driver.findElementByXPath("//input[@class='wpcf7-form-control wpcf7-submit']").click();
 			// Wait +7 seconds for iiii site.
-			TimeUnit.SECONDS.sleep(this.VarClass.waitBeforeClick + 7);
+			TimeUnit.SECONDS.sleep(this.VarClass.waitBeforeClick + 4);
+			// Save log to txt file.
+			saveLogToTXT();
 
 		} catch (Exception e) {
 			e.printStackTrace();
 			throw new Exception("Failed in Email send by iiii.co.il");
 		}
-
 		// Close agent
 		VarClass.driver.quit();
-
 	}
 
 	public int monthDatePlus1(String dayOrMonth, int valueOfDayOrMonth) {
@@ -341,7 +328,6 @@ public class sanityAllOptionsTest {
 		try {
 
 			// Show accessibility-menu:
-			// Hide or show in console google dev tools:
 			// $('.accessibility-menu').show()
 			// $('.accessibility-menu').hide()
 
@@ -350,26 +336,9 @@ public class sanityAllOptionsTest {
 
 			Instant start = Instant.now();
 
-//			js.executeScript("setTimeout(()=>{document.querySelector('#btn-save-start-date').click()},000)");
-//			
-//			js.executeScript("setTimeout(()=>{document.querySelector('#btn-save-start-date').click()},000)");
-
-//			ChromeOptions options = new ChromeOptions();
-//			options.addArguments("--start-maximized");
-
-			// VarClass.driver.manage().window().maximize();
-
-			// VarClass.driver.manage().window().fullscreen();
 			// Screen1.1: Start insurance date.
 			VarClass.wait = new WebDriverWait(VarClass.driver, VarClass.waitForElement);
-			// VarClass.wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("ap-component-selector-2")));
-
-//			TimeUnit.SECONDS.sleep(VarClass.waitBeforeClick);
-//			VarClass.driver.findElementByXPath("//*[@id=\"ins-start-date\"]").clear();
-//			TimeUnit.SECONDS.sleep(VarClass.waitBeforeClick);
-//			VarClass.driver.findElementByXPath("//*[@id=\"ins-start-date\"]").sendKeys("10/10/2019");
 			TimeUnit.SECONDS.sleep(VarClass.waitBeforeClick);
-
 			TimeUnit.SECONDS.sleep(VarClass.waitBeforeClick);
 			VarClass.driver.findElementByXPath("//*[@class='mat-datepicker-toggle-default-icon ng-star-inserted']")
 					.click();
@@ -381,18 +350,8 @@ public class sanityAllOptionsTest {
 			TimeUnit.SECONDS.sleep(VarClass.waitBeforeClick);
 			VarClass.driver.findElementByXPath("//div[@class='mat-calendar-body-cell-content mat-calendar-body-today']")
 					.click();
-
 			TimeUnit.SECONDS.sleep(VarClass.waitBeforeClick);
 			VarClass.driver.findElementByXPath("//button[@class='btn-next orange-circle']").click();
-			// js.executeScript("setTimeout(()=>{document.querySelector('#btn-save-start-date').click()},
-			// 000)");
-
-//			System.out.println("Errors logs:");
-//			LogEntries logs = VarClass.driver.manage().logs().get("browser");
-//					for (LogEntry entry: logs){
-//					System.out.println(entry.getMessage());
-//					};
-
 			// Screen1.2: How many drivers.
 			VarClass.wait.until(ExpectedConditions
 					.visibilityOfElementLocated(ByXPath.xpath((numberOfDrivers(VarClass.numberOfDrivers)))));
@@ -405,21 +364,6 @@ public class sanityAllOptionsTest {
 			VarClass.driver.findElementById("youngest-driver-age").sendKeys(VarClass.youngestDriverAge);
 			TimeUnit.SECONDS.sleep(VarClass.waitBeforeClick);
 			VarClass.driver.findElementByXPath("//aw-wizard-step[3]//*[contains(@class,'orange')]").click();
-
-//			JavascriptExecutor js = (JavascriptExecutor) VarClass.driver;
-//			js.executeScript("$('.accessibility-menu').show()");
-//			
-////			
-//			
-//			console.stdlog = console.log.bind(console);
-//			console.logs = [];
-//			console.log = function(){
-//			    console.logs.push(Array.from(arguments));
-//			    console.stdlog.apply(console, arguments);
-//			}
-//			
-//			
-
 			// Screen1.4: licenseOfYoungestDriver.;
 			VarClass.wait
 					.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(driverYears(VarClass.drivingYears))));
@@ -433,8 +377,7 @@ public class sanityAllOptionsTest {
 			TimeUnit.SECONDS.sleep(VarClass.waitBeforeClick);
 			VarClass.driver.findElementByXPath(mortgageCar(VarClass.mortgageCar)).click();
 			// Screen1.6: 3 years insurance.
-			// VarClass.wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("step-0-q6-0-radio-2")));
-			TimeUnit.SECONDS.sleep(VarClass.waitBeforeClick + 3);
+			TimeUnit.SECONDS.sleep(VarClass.waitBeforeClick + 2);
 			VarClass.driver.findElementByXPath(yearsOfInsurance(VarClass.yearsOfInsurance)).click();
 			// Screen1.7: Claims in 3 years.
 			JavascriptExecutor jse = (JavascriptExecutor) VarClass.driver;
@@ -456,23 +399,10 @@ public class sanityAllOptionsTest {
 			System.out.println("Method initialOfferQuestions took: " + Duration.between(start, end));
 		} catch (Exception e) {
 			e.printStackTrace();
-			emailException();
+			testException();
 			throw new Exception("Failed in FIRST OFFER QUESTIONS.");
 		}
 	}
-
-	// @Test(enabled=false)
-//	@Test(priority = 20)
-//	public void callMeWizard() throws Exception {
-//		try {
-//			
-//			//callMeWizard = new callMeWizard();
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//			emailException();
-//			throw new Exception("Failed in ***Call me wizard 1***");
-//		}
-//	}
 
 	@Test(enabled = false)
 	// @Test(priority = 20)
@@ -517,7 +447,7 @@ public class sanityAllOptionsTest {
 					.click();
 		} catch (Exception e) {
 			e.printStackTrace();
-			emailException();
+			testException();
 			throw new Exception("Failed in ***Call me wizard 1***");
 		}
 	}
@@ -525,9 +455,7 @@ public class sanityAllOptionsTest {
 	@Test(priority = 30)
 	public void initialOfferScreen() throws Exception {
 		try {
-
 			TimeUnit.SECONDS.sleep(2);
-
 			WebDriverWait wait1 = new WebDriverWait(VarClass.driver, this.VarClass.waitForElement);
 			wait1.until(ExpectedConditions.visibilityOfElementLocated(
 					By.cssSelector("body > app-root > primary-bid > div > div.bid-content > a.link-procceed")));
@@ -607,7 +535,7 @@ public class sanityAllOptionsTest {
 
 		} catch (Exception e) {
 			e.printStackTrace();
-			emailException();
+			testException();
 			throw new Exception("Failed in INITIAL OFFER SCREEN QUESTION");
 		}
 	}
@@ -708,16 +636,8 @@ public class sanityAllOptionsTest {
 					.findElementByXPath(
 							"/html/body/app-root/external-app-offer/aw-wizard/div/aw-wizard-step[3]/div/div/button[1]")
 					.click();
-
 			TimeUnit.SECONDS.sleep(this.VarClass.waitBeforeClick);
 
-			TimeUnit.SECONDS.sleep(this.VarClass.waitBeforeClick);
-//			System.out.println(VarClass.driver
-//					.findElementByXPath("/html/body/app-root/external-app-offer/aw-wizard/div/aw-wizard-step[5]/div/h1")
-//					.getText());
-
-			// if(VarClass.driver.findElementByXPath("/html/body/app-root/external-app-offer/wizard-process-bar/div/span").getText().equals("
-			// 4 מתוך 6 ") )
 			// question for additional driver:
 			if (VarClass.driver
 					.findElementByXPath("/html/body/app-root/external-app-offer/aw-wizard/div/aw-wizard-step[5]/div/h1")
@@ -756,10 +676,6 @@ public class sanityAllOptionsTest {
 				VarClass.wait.until(ExpectedConditions.visibilityOfElementLocated(
 						By.xpath("/html/body/app-root/external-app-offer/aw-wizard/div/aw-wizard-step[6]/div/h1")));
 				TimeUnit.SECONDS.sleep(2);
-				// if (VarClass.driver
-				// .findElementByXPath(
-				// "/html/body/app-root/external-app-offer/aw-wizard/div/aw-wizard-step[6]/div/h1")
-				// .getText().equals("פרטים אישיים של הנהג הנוסף השני")) {
 				// Screen2.1: Privacy details of policy owner.
 
 				VarClass.driver.findElementByXPath("//*[@id=\"step-10-firstName-0\"]")
@@ -855,7 +771,7 @@ public class sanityAllOptionsTest {
 					.click();
 		} catch (Exception e) {
 			e.printStackTrace();
-			emailException();
+			testException();
 			throw new Exception("Failed in FINAL OFFER QUESTIONS");
 		}
 	}
@@ -917,7 +833,7 @@ public class sanityAllOptionsTest {
 
 		} catch (Exception e) {
 			e.printStackTrace();
-			emailException();
+			testException();
 			throw new Exception("Failed in FINAL OFFER screen");
 		}
 	}
@@ -955,7 +871,7 @@ public class sanityAllOptionsTest {
 			VarClass.driver.findElementByXPath("/html/body/app-root/final-bid/div/div[1]/a[2]").click();
 		} catch (Exception e) {
 			e.printStackTrace();
-			emailException();
+			testException();
 			throw new Exception("Failed in call me wizard #2");
 		}
 	}
@@ -968,9 +884,6 @@ public class sanityAllOptionsTest {
 					.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[3]//div[2]//div[1]//img[1]")));
 
 			TimeUnit.MILLISECONDS.sleep(this.VarClass.MILLISECONDS);
-//			VarClass.driver.findElementByXPath(
-//					"/html/body/app-root/offer-payment/aw-wizard/div/aw-wizard-step[1]/div/div[2]/horizontal-checkboxes/ul/li[1]/label")
-//					.click();
 
 			VarClass.driver.findElementById("chk-step1-q0-idx0").click();
 
@@ -996,7 +909,7 @@ public class sanityAllOptionsTest {
 					.click();
 		} catch (Exception e) {
 			e.printStackTrace();
-			emailException();
+			testException();
 			throw new Exception("Failed in COVERS screen");
 		}
 	}
@@ -1040,7 +953,7 @@ public class sanityAllOptionsTest {
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
-			emailException();
+			testException();
 			throw new Exception("Failed in PAYMENTS screen");
 		}
 	}
@@ -1168,7 +1081,7 @@ public class sanityAllOptionsTest {
 			(new Actions(VarClass.driver)).dragAndDrop(element, target).perform();
 		} catch (Exception e) {
 			e.printStackTrace();
-			emailException();
+			testException();
 			throw new Exception("Failed in moveing BACKWARD");
 		}
 	}
@@ -1277,7 +1190,7 @@ public class sanityAllOptionsTest {
 
 		} catch (Exception e) {
 			e.printStackTrace();
-			emailException();
+			testException();
 			throw new Exception("Failed in moveing FORWARD");
 		}
 	}
@@ -1326,7 +1239,7 @@ public class sanityAllOptionsTest {
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
-			// emailException();
+			// testException();
 			throw new Exception("Failed in Iframe CreditGuard");
 		}
 	}

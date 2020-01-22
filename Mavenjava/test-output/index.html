@@ -173,8 +173,8 @@
                   </a> <!-- covers -->
                   <span class="method-name">covers</span>
                   <div class="stack-trace">java.lang.Exception: Failed in ScreenShot
-	at TestNG.sanityAllOptionsTest.emailException(sanityAllOptionsTest.java:126)
-	at TestNG.sanityAllOptionsTest.covers(sanityAllOptionsTest.java:998)
+	at TestNG.sanityAllOptionsTest.testException(sanityAllOptionsTest.java:135)
+	at TestNG.sanityAllOptionsTest.covers(sanityAllOptionsTest.java:919)
 	at java.util.concurrent.FutureTask.run(Unknown Source)
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
@@ -189,8 +189,8 @@
                   </a> <!-- finalOfferQuestions -->
                   <span class="method-name">finalOfferQuestions</span>
                   <div class="stack-trace">java.lang.Exception: Failed in ScreenShot
-	at TestNG.sanityAllOptionsTest.emailException(sanityAllOptionsTest.java:126)
-	at TestNG.sanityAllOptionsTest.finalOfferQuestions(sanityAllOptionsTest.java:857)
+	at TestNG.sanityAllOptionsTest.testException(sanityAllOptionsTest.java:135)
+	at TestNG.sanityAllOptionsTest.finalOfferQuestions(sanityAllOptionsTest.java:781)
 	at java.util.concurrent.FutureTask.run(Unknown Source)
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
@@ -205,8 +205,8 @@
                   </a> <!-- finalOfferScreen -->
                   <span class="method-name">finalOfferScreen</span>
                   <div class="stack-trace">java.lang.Exception: Failed in ScreenShot
-	at TestNG.sanityAllOptionsTest.emailException(sanityAllOptionsTest.java:126)
-	at TestNG.sanityAllOptionsTest.finalOfferScreen(sanityAllOptionsTest.java:919)
+	at TestNG.sanityAllOptionsTest.testException(sanityAllOptionsTest.java:135)
+	at TestNG.sanityAllOptionsTest.finalOfferScreen(sanityAllOptionsTest.java:843)
 	at java.util.concurrent.FutureTask.run(Unknown Source)
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
@@ -221,8 +221,8 @@
                   </a> <!-- forwardSteps -->
                   <span class="method-name">forwardSteps</span>
                   <div class="stack-trace">java.lang.Exception: Failed in ScreenShot
-	at TestNG.sanityAllOptionsTest.emailException(sanityAllOptionsTest.java:126)
-	at TestNG.sanityAllOptionsTest.forwardSteps(sanityAllOptionsTest.java:1279)
+	at TestNG.sanityAllOptionsTest.testException(sanityAllOptionsTest.java:135)
+	at TestNG.sanityAllOptionsTest.forwardSteps(sanityAllOptionsTest.java:1200)
 	at java.util.concurrent.FutureTask.run(Unknown Source)
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
@@ -237,7 +237,7 @@
                   </a> <!-- initialOfferScreen -->
                   <span class="method-name">initialOfferScreen</span>
                   <div class="stack-trace">java.lang.Exception: Failed in INITIAL OFFER SCREEN QUESTION
-	at TestNG.sanityAllOptionsTest.initialOfferScreen(sanityAllOptionsTest.java:610)
+	at TestNG.sanityAllOptionsTest.initialOfferScreen(sanityAllOptionsTest.java:546)
 	at java.util.concurrent.FutureTask.run(Unknown Source)
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
@@ -252,8 +252,8 @@
                   </a> <!-- payments -->
                   <span class="method-name">payments</span>
                   <div class="stack-trace">java.lang.Exception: Failed in ScreenShot
-	at TestNG.sanityAllOptionsTest.emailException(sanityAllOptionsTest.java:126)
-	at TestNG.sanityAllOptionsTest.payments(sanityAllOptionsTest.java:1042)
+	at TestNG.sanityAllOptionsTest.testException(sanityAllOptionsTest.java:135)
+	at TestNG.sanityAllOptionsTest.payments(sanityAllOptionsTest.java:963)
 	at java.util.concurrent.FutureTask.run(Unknown Source)
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
@@ -268,8 +268,8 @@
                   </a> <!-- returnSteps -->
                   <span class="method-name">returnSteps</span>
                   <div class="stack-trace">java.lang.Exception: Failed in ScreenShot
-	at TestNG.sanityAllOptionsTest.emailException(sanityAllOptionsTest.java:126)
-	at TestNG.sanityAllOptionsTest.returnSteps(sanityAllOptionsTest.java:1170)
+	at TestNG.sanityAllOptionsTest.testException(sanityAllOptionsTest.java:135)
+	at TestNG.sanityAllOptionsTest.returnSteps(sanityAllOptionsTest.java:1091)
 	at java.util.concurrent.FutureTask.run(Unknown Source)
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
@@ -304,13 +304,13 @@
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite thread-count=&quot;1&quot; guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Test-class Suite&quot; parallel=&quot;tests&quot;&gt;
-  &lt;test thread-count=&quot;1&quot; name=&quot;Test-class test 2 red1years&quot; parallel=&quot;tests&quot;&gt;
+&lt;suite thread-count=&quot;2&quot; guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Test-class Suite&quot; parallel=&quot;tests&quot;&gt;
+  &lt;test thread-count=&quot;2&quot; name=&quot;Test-class test 1 Production&quot; parallel=&quot;tests&quot;&gt;
     &lt;parameter name=&quot;xml&quot; value=&quot;dev&quot;/&gt;
     &lt;classes&gt;
       &lt;class name=&quot;TestNG.sanityAllOptionsTest&quot;/&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- Test-class test 2 red1years --&gt;
+  &lt;/test&gt; &lt;!-- Test-class test 1 Production --&gt;
 &lt;/suite&gt; &lt;!-- Test-class Suite --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -322,7 +322,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Test-class test 2 red1years (1 class)</span>
+                <span class="test-name">Test-class test 1 Production (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -352,40 +352,40 @@ data.addRows(8);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'initialOfferScreen')
 data.setCell(0, 2, 'TestNG.sanityAllOptionsTest')
-data.setCell(0, 3, 111619);
+data.setCell(0, 3, 98786);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'initialOfferQuestions')
 data.setCell(1, 2, 'TestNG.sanityAllOptionsTest')
-data.setCell(1, 3, 62902);
+data.setCell(1, 3, 59058);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'payments')
+data.setCell(2, 1, 'forwardSteps')
 data.setCell(2, 2, 'TestNG.sanityAllOptionsTest')
-data.setCell(2, 3, 13002);
+data.setCell(2, 3, 13009);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'forwardSteps')
+data.setCell(3, 1, 'payments')
 data.setCell(3, 2, 'TestNG.sanityAllOptionsTest')
-data.setCell(3, 3, 13002);
+data.setCell(3, 3, 13004);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'finalOfferScreen')
+data.setCell(4, 1, 'returnSteps')
 data.setCell(4, 2, 'TestNG.sanityAllOptionsTest')
-data.setCell(4, 3, 10004);
+data.setCell(4, 3, 10008);
 data.setCell(5, 0, 5)
-data.setCell(5, 1, 'returnSteps')
+data.setCell(5, 1, 'finalOfferScreen')
 data.setCell(5, 2, 'TestNG.sanityAllOptionsTest')
-data.setCell(5, 3, 10004);
+data.setCell(5, 3, 10006);
 data.setCell(6, 0, 6)
 data.setCell(6, 1, 'covers')
 data.setCell(6, 2, 'TestNG.sanityAllOptionsTest')
-data.setCell(6, 3, 10003);
+data.setCell(6, 3, 10006);
 data.setCell(7, 0, 7)
 data.setCell(7, 1, 'finalOfferQuestions')
 data.setCell(7, 2, 'TestNG.sanityAllOptionsTest')
-data.setCell(7, 3, 10002);
+data.setCell(7, 3, 10005);
 window.suiteTableData['Test-class_Suite']= { tableData: data, tableDiv: 'times-div-Test-class_Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 4 minutes</span>
+              <span class="suite-total-time">Total running time: 3 minutes</span>
               <div id="times-div-Test-class_Suite">
               </div> <!-- times-div-Test-class_Suite -->
             </div> <!-- times-div -->
@@ -435,43 +435,43 @@ return data;
                 <img src="failed.png">
                 </img>
                 <span class="method-name">initialOfferScreen</span>
-                <span class="method-start">62906 ms</span>
+                <span class="method-start">59062 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">finalOfferQuestions</span>
-                <span class="method-start">174528 ms</span>
+                <span class="method-start">157851 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">finalOfferScreen</span>
-                <span class="method-start">184532 ms</span>
+                <span class="method-start">167862 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">covers</span>
-                <span class="method-start">194538 ms</span>
+                <span class="method-start">177870 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">payments</span>
-                <span class="method-start">204542 ms</span>
+                <span class="method-start">187878 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">returnSteps</span>
-                <span class="method-start">217547 ms</span>
+                <span class="method-start">200891 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">forwardSteps</span>
-                <span class="method-start">227563 ms</span>
+                <span class="method-start">210903 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
