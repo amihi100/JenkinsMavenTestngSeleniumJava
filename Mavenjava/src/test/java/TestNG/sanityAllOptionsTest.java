@@ -949,8 +949,7 @@ public class sanityAllOptionsTest {
 						.click();
 
 			} else {
-				// VarClass.driver.findElementByXPath(" //span[contains(text(),'כרטיס אשראי
-				// אחר')]").click();
+//				This text contained Hebrew letters!
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
