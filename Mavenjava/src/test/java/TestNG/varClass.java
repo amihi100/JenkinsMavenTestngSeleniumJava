@@ -217,7 +217,8 @@ public class varClass {
 			logPrefs.enable(LogType.DRIVER, Level.ALL);
 			logPrefs.enable(LogType.BROWSER, Level.ALL);
 			options.setCapability(CapabilityType.LOGGING_PREFS, logPrefs);
-
+			//Enable for headless selenium tests.
+//			options.addArguments("headless");
 			options.addArguments("--log-level=1");
 			options.addArguments("disable-infobars");
 			options.setExperimentalOption("useAutomationExtension", false);
