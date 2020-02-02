@@ -55,21 +55,21 @@ import org.testng.annotations.Parameters;
  *
  */
 
-public class sanityAllOptionsTest {
+public class SanityAllOptions {
 	@Parameters("xml")
-	public sanityAllOptionsTest(String xml)
+	public SanityAllOptions(String xml)
 			throws InvalidPropertiesFormatException, FileNotFoundException, IOException, InterruptedException {
 		// TimeUnit.SECONDS.sleep(10);
-		 VarClass = new  varClass();
+		 varClass = new  VarClass();
 		try {
-			VarClass.defineVariables(xml);
+			varClass.defineVariables(xml);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 
 	java.util.Date dateTime = new java.util.Date();
-	 varClass VarClass;
+	 VarClass varClass;
 
 	WebDriverWait waitZ;
 	/**
@@ -80,28 +80,28 @@ public class sanityAllOptionsTest {
 	 * 
 	 */
 	
-	testFailed testFailedObject = new testFailed();
-	initialQuestions initialQuestionsObject = new initialQuestions();
-	callMeWizard callMeWizardObject = new callMeWizard();
-	initialOfferScreen  initialOfferScreenObject = new initialOfferScreen();
-	finalQuestions finalQuestionsObject = new finalQuestions();
-	finalOfferScreen finalOfferScreenObject = new finalOfferScreen();
-	covers coversObject = new covers();
-	payments paymentsObject = new payments();
-	returnSteps returnStepsObject = new returnSteps();
-	forwardSteps forwardStepsObject = new forwardSteps();
-	iframeCreditGuard iframeCreditGuardObject = new iframeCreditGuard();
-	thankYouPage thankYouPageObject = new thankYouPage();
-	registeredAccount registeredAccountObject = new registeredAccount();
+	TestFailed testFailed = new TestFailed();
+	InitialQuestions initialQuestions = new InitialQuestions();
+	CallMeWizard callMeWizard = new CallMeWizard();
+	InitialOfferScreen  initialOfferScreen = new InitialOfferScreen();
+	FinalQuestions finalQuestions = new FinalQuestions();
+	FinalOfferScreen finalOfferScreen = new FinalOfferScreen();
+	Covers covers = new Covers();
+	Payments payments = new Payments();
+	ReturnSteps returnSteps = new ReturnSteps();
+	ForwardSteps forwardSteps = new ForwardSteps();
+	IframeCreditGuard iframeCreditGuard = new IframeCreditGuard();
+	ThankYou thankYou = new ThankYou();
+	RegisteredAccount registeredAccount = new RegisteredAccount();
 	
 //	@Test(priority = 1 , dependsOnGroups={"varClass.defineVariables"})
 	@Test(priority = 10)
 	public void initialQuestions() throws Exception {
 		try {
-			initialQuestionsObject.initialQuestionsMethod(VarClass.driver, VarClass);
+			initialQuestions.initialQuestions(varClass.driver, varClass);
 		} catch (Exception e) {
 			e.printStackTrace();
-			testFailedObject.testFailedMethod(VarClass.driver, VarClass);
+			testFailed.testFailed(varClass.driver, varClass);
 			throw new Exception("Failed in FIRST OFFER QUESTIONS.");
 		}
 	}
@@ -111,10 +111,10 @@ public class sanityAllOptionsTest {
 	public void callMeWizard() throws Exception {
 		try {
 
-			callMeWizardObject.callMeWizardMethod(VarClass.driver, VarClass);
+			callMeWizard.callMeWizard(varClass.driver, varClass);
 		} catch (Exception e) {
 			e.printStackTrace();
-			testFailedObject.testFailedMethod(VarClass.driver, VarClass);
+			testFailed.testFailed(varClass.driver, varClass);
 			throw new Exception("Failed in ***Call me wizard 1***");
 		}
 	}
@@ -124,10 +124,10 @@ public class sanityAllOptionsTest {
 	public void initialOfferScreen() throws Exception {
 		try {
 			
-			initialOfferScreenObject.initialOfferScreen(VarClass.driver, VarClass);
+			initialOfferScreen.initialOfferScreen(varClass.driver, varClass);
 		} catch (Exception e) {
 			e.printStackTrace();
-			testFailedObject.testFailedMethod(VarClass.driver, VarClass);
+			testFailed.testFailed(varClass.driver, varClass);
 			throw new Exception("Failed in INITIAL OFFER SCREEN QUESTION");
 		}
 	}
@@ -136,11 +136,11 @@ public class sanityAllOptionsTest {
 	public void finalQuestions() throws Exception {
 		// FINAL OFFER SCREENS QUESTIONS.
 		try {
-			finalQuestionsObject.finalQuestionsMethod(VarClass.driver, VarClass);
+			finalQuestions.finalQuestions(varClass.driver, varClass);
 			
 		} catch (Exception e) {
 			e.printStackTrace();
-			testFailedObject.testFailedMethod(VarClass.driver, VarClass);
+			testFailed.testFailed(varClass.driver, varClass);
 			throw new Exception("Failed in FINAL OFFER QUESTIONS");
 		}
 	}
@@ -148,10 +148,10 @@ public class sanityAllOptionsTest {
 	@Test(priority = 50, dependsOnMethods="initialOfferScreen")
 	public void finalOfferScreen() throws Exception {
 		try {
-			finalOfferScreenObject.finalOfferScreenMethod(VarClass.driver, VarClass);
+			finalOfferScreen.finalOfferScreen(varClass.driver, varClass);
 		} catch (Exception e) {
 			e.printStackTrace();
-			testFailedObject.testFailedMethod(VarClass.driver, VarClass);
+			testFailed.testFailed(varClass.driver, varClass);
 			throw new Exception("Failed in FINAL OFFER screen");
 		}
 	}
@@ -159,12 +159,12 @@ public class sanityAllOptionsTest {
 
 	@Test(priority = 70, dependsOnMethods="initialOfferScreen")
 	public void covers() throws Exception {
-		coversObject.coversMethod(VarClass.driver, VarClass);
+		covers.covers(varClass.driver, varClass);
 		try {
 			
 		} catch (Exception e) {
 			e.printStackTrace();
-			testFailedObject.testFailedMethod(VarClass.driver, VarClass);
+			testFailed.testFailed(varClass.driver, varClass);
 			throw new Exception("Failed in COVERS screen");
 		}
 	}
@@ -172,10 +172,10 @@ public class sanityAllOptionsTest {
 	@Test(priority = 80, dependsOnMethods="initialOfferScreen")
 	public void payments() throws Exception {
 		try {
-			paymentsObject.paymentsMethod(VarClass.driver, VarClass);
+			payments.payments(varClass.driver, varClass);
 		} catch (Exception e) {
 			e.printStackTrace();
-			testFailedObject.testFailedMethod(VarClass.driver, VarClass);
+			testFailed.testFailed(varClass.driver, varClass);
 			throw new Exception("Failed in PAYMENTS screen");
 		}
 	}
@@ -183,10 +183,10 @@ public class sanityAllOptionsTest {
 	@Test(priority = 85, dependsOnMethods="initialOfferScreen")
 	public void returnSteps() throws Exception {
 		try {
-			returnStepsObject.returnStepsMethod(VarClass.driver, VarClass);
+			returnSteps.returnSteps(varClass.driver, varClass);
 		} catch (Exception e) {
 			e.printStackTrace();
-			testFailedObject.testFailedMethod(VarClass.driver, VarClass);
+			testFailed.testFailed(varClass.driver, varClass);
 			throw new Exception("Failed in moveing BACKWARD");
 		}
 	}
@@ -194,53 +194,53 @@ public class sanityAllOptionsTest {
 	@Test(priority = 86, dependsOnMethods="initialOfferScreen")
 	public void forwardSteps() throws Exception {
 		try {
-			forwardStepsObject.forwardStepsMethod(VarClass.driver, VarClass);
+			forwardSteps.forwardSteps(varClass.driver, varClass);
 		} catch (Exception e) {
 			e.printStackTrace();
-			testFailedObject.testFailedMethod(VarClass.driver, VarClass);
+			testFailed.testFailed(varClass.driver, varClass);
 			throw new Exception("Failed in moveing FORWARD");
 		}
 	}
 
-	@Test(enabled = false)
-	// @Test(priority = 90, dependsOnMethods="initialOfferScreen")
+	//@Test(enabled = false)
+	 @Test(priority = 90, dependsOnMethods="initialOfferScreen")
 	public void iframeCreditGuard() throws Exception {
 		try {
-			iframeCreditGuardObject.iframeCreditGuardMethod(VarClass.driver, VarClass);
+			iframeCreditGuard.iframeCreditGuard(varClass.driver, varClass);
 		} catch (Exception e) {
 			e.printStackTrace();
-			testFailedObject.testFailedMethod(VarClass.driver, VarClass);
+			testFailed.testFailed(varClass.driver, varClass);
 			// testException();
 			throw new Exception("Failed in Iframe CreditGuard");
 		}
 	}
 
-	@Test(enabled = false)
-	// @Test(priority = 100, dependsOnMethods="initialOfferScreen")
+	//@Test(enabled = false)
+	 @Test(priority = 100, dependsOnMethods="initialOfferScreen")
 	public void thankYouPage() throws Exception {
 		try {
-			thankYouPageObject.thankYouPageMethod(VarClass.driver, VarClass);
+			thankYou.thankYou(varClass.driver, varClass);
 		} catch (Exception e) {
 			e.printStackTrace();
-			testFailedObject.testFailedMethod(VarClass.driver, VarClass);
+			testFailed.testFailed(varClass.driver, varClass);
 			throw new Exception("Failed to display thank you page");
 		}
 	}
 
-	@Test(enabled = false)
-	// @Test(priority = 110, dependsOnMethods="initialOfferScreen")
+	//@Test(enabled = false)
+	 @Test(priority = 110, dependsOnMethods="initialOfferScreen")
 	public void registeredAccount() throws Exception {
 		try {
-			registeredAccountObject.registeredAccountMethod(VarClass.driver, VarClass);
+			registeredAccount.registeredAccount(varClass.driver, varClass);
 		} catch (Exception e) {
 			e.printStackTrace();
-			testFailedObject.testFailedMethod(VarClass.driver, VarClass);
+			testFailed.testFailed(varClass.driver, varClass);
 			throw new Exception("Failed to display thank you page");
 		} finally {
 			// This block is executed either exception happened or not.
 			// TODO: close chrome tabs , delete cookies, preapre for new tests.
-			VarClass.driver.manage().deleteAllCookies();
-			// VarClass.driver.close();
+			varClass.driver.manage().deleteAllCookies();
+			// varClass.driver.close();
 			System.out.println("Closed tab and deleted cookies");
 		}
 	}

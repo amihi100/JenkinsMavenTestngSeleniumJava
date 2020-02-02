@@ -6,38 +6,38 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class covers {
+public class Covers {
 
 	WebDriver driver;
-	varClass VarClass;
-	public void coversMethod(WebDriver driver, varClass VarClass) throws InterruptedException {
+	VarClass varClass;
+	public void covers(WebDriver driver, VarClass varClass) throws InterruptedException {
 		
 		// Screen: Covers.
-					VarClass.wait
+					varClass.wait
 							.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[3]//div[2]//div[1]//img[1]")));
 
-					TimeUnit.MILLISECONDS.sleep(VarClass.MILLISECONDS);
+					TimeUnit.MILLISECONDS.sleep(varClass.MILLISECONDS);
 
-					VarClass.driver.findElementById("chk-step1-q0-idx0").click();
+					varClass.driver.findElementById("chk-step1-q0-idx0").click();
 
-					VarClass.driver.findElementById("chk-step1-q0-idx1").click();
+					varClass.driver.findElementById("chk-step1-q0-idx1").click();
 
-					VarClass.driver.findElementById("chk-step1-q0-idx2").click();
+					varClass.driver.findElementById("chk-step1-q0-idx2").click();
 
 					System.out.println("Covers included:");
 					System.out.println("-------------------------");
-					System.out.println(VarClass.driver
+					System.out.println(varClass.driver
 							.findElementByXPath("//div[@class='flex-container']//div[1]//div[2]//div[1]//span[1]").getText());
 					System.out.println("-------------------------");
-					System.out.println(VarClass.driver
+					System.out.println(varClass.driver
 							.findElementByXPath(" //div[@class='wizard-step-wrapper']//div[2]//div[2]//div[1]//span[1]")
 							.getText());
 					System.out.println("-------------------------");
-					System.out.println(VarClass.driver.findElementByXPath("//div[3]//div[2]//div[1]//span[1]").getText());
+					System.out.println(varClass.driver.findElementByXPath("//div[3]//div[2]//div[1]//span[1]").getText());
 					System.out.println("-------------------------");
 
-					TimeUnit.SECONDS.sleep(VarClass.waitBeforeClick);
-					VarClass.driver.findElementByXPath(
+					TimeUnit.SECONDS.sleep(varClass.waitBeforeClick);
+					varClass.driver.findElementByXPath(
 							"/html/body/app-root/offer-payment/aw-wizard/div/aw-wizard-step[1]/div/div[2]/div/button[1]")
 							.click();
 	}

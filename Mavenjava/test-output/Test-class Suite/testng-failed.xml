@@ -4,18 +4,18 @@
   <test thread-count="2" name="Test-class test 1 Production(failed)" parallel="tests">
     <parameter name="xml" value="dev"/>
     <classes>
-      <class name="TestNG.sanityAllOptionsTest">
+      <class name="TestNG.SanityAllOptions">
         <methods>
-          <include name="forwardSteps"/>
-          <include name="returnSteps"/>
-          <include name="covers"/>
-          <include name="initialOfferScreen"/>
           <include name="finalOfferScreen"/>
+          <include name="payments"/>
+          <include name="initialOfferScreen"/>
+          <include name="returnSteps"/>
+          <include name="forwardSteps"/>
+          <include name="covers"/>
           <include name="initialQuestions"/>
           <include name="finalQuestions"/>
-          <include name="payments"/>
         </methods>
-      </class> <!-- TestNG.sanityAllOptionsTest -->
+      </class> <!-- TestNG.SanityAllOptions -->
     </classes>
   </test> <!-- Test-class test 1 Production(failed) -->
 </suite> <!-- Failed suite [Test-class Suite] -->

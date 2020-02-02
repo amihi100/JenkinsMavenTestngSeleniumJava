@@ -2,23 +2,23 @@
 <testng-results skipped="6" failed="1" ignored="4" total="12" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Test-class Suite" duration-ms="159123" started-at="2020-02-02T15:14:46Z" finished-at="2020-02-02T15:17:26Z">
+  <suite name="Test-class Suite" duration-ms="163438" started-at="2020-02-02T16:40:55Z" finished-at="2020-02-02T16:43:39Z">
     <groups>
     </groups>
-    <test name="Test-class test 1 Production" duration-ms="159123" started-at="2020-02-02T15:14:46Z" finished-at="2020-02-02T15:17:26Z">
-      <class name="TestNG.sanityAllOptionsTest">
-        <test-method status="PASS" signature="initialQuestions()[pri:10, instance:TestNG.sanityAllOptionsTest@2cf3d63b]" name="initialQuestions" duration-ms="54482" started-at="2020-02-02T15:14:46Z" finished-at="2020-02-02T15:15:41Z">
+    <test name="Test-class test 1 Production" duration-ms="163438" started-at="2020-02-02T16:40:55Z" finished-at="2020-02-02T16:43:39Z">
+      <class name="TestNG.SanityAllOptions">
+        <test-method status="PASS" signature="initialQuestions()[pri:10, instance:TestNG.SanityAllOptions@2cf3d63b]" name="initialQuestions" duration-ms="53953" started-at="2020-02-02T16:40:55Z" finished-at="2020-02-02T16:41:49Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialQuestions -->
-        <test-method status="FAIL" signature="initialOfferScreen()[pri:30, instance:TestNG.sanityAllOptionsTest@2cf3d63b]" name="initialOfferScreen" duration-ms="104596" started-at="2020-02-02T15:15:41Z" depends-on-methods="TestNG.sanityAllOptionsTest.initialQuestions" finished-at="2020-02-02T15:17:26Z">
+        <test-method status="FAIL" signature="initialOfferScreen()[pri:30, instance:TestNG.SanityAllOptions@2cf3d63b]" name="initialOfferScreen" duration-ms="109432" started-at="2020-02-02T16:41:49Z" depends-on-methods="TestNG.SanityAllOptions.initialQuestions" finished-at="2020-02-02T16:43:39Z">
           <exception class="java.lang.Exception">
             <message>
               <![CDATA[Failed in INITIAL OFFER SCREEN QUESTION]]>
             </message>
             <full-stacktrace>
               <![CDATA[java.lang.Exception: Failed in INITIAL OFFER SCREEN QUESTION
-at TestNG.sanityAllOptionsTest.initialOfferScreen(sanityAllOptionsTest.java:131)
+at TestNG.SanityAllOptions.initialOfferScreen(SanityAllOptions.java:131)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -45,13 +45,13 @@ at java.lang.Thread.run(Unknown Source)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialOfferScreen -->
-        <test-method status="SKIP" signature="finalQuestions()[pri:40, instance:TestNG.sanityAllOptionsTest@2cf3d63b]" name="finalQuestions" duration-ms="0" started-at="2020-02-02T15:17:26Z" depends-on-methods="TestNG.sanityAllOptionsTest.initialOfferScreen" finished-at="2020-02-02T15:17:26Z">
+        <test-method status="SKIP" signature="finalQuestions()[pri:40, instance:TestNG.SanityAllOptions@2cf3d63b]" name="finalQuestions" duration-ms="0" started-at="2020-02-02T16:43:39Z" depends-on-methods="TestNG.SanityAllOptions.initialOfferScreen" finished-at="2020-02-02T16:43:39Z">
           <exception class="java.lang.Throwable">
             <message>
-              <![CDATA[Method sanityAllOptionsTest.finalQuestions()[pri:40, instance:TestNG.sanityAllOptionsTest@2cf3d63b] depends on not successfully finished methods]]>
+              <![CDATA[Method SanityAllOptions.finalQuestions()[pri:40, instance:TestNG.SanityAllOptions@2cf3d63b] depends on not successfully finished methods]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.Throwable: Method sanityAllOptionsTest.finalQuestions()[pri:40, instance:TestNG.sanityAllOptionsTest@2cf3d63b] depends on not successfully finished methods
+              <![CDATA[java.lang.Throwable: Method SanityAllOptions.finalQuestions()[pri:40, instance:TestNG.SanityAllOptions@2cf3d63b] depends on not successfully finished methods
 at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:888)
 at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
 at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
@@ -71,13 +71,13 @@ at java.lang.Thread.run(Unknown Source)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- finalQuestions -->
-        <test-method status="SKIP" signature="finalOfferScreen()[pri:50, instance:TestNG.sanityAllOptionsTest@2cf3d63b]" name="finalOfferScreen" duration-ms="0" started-at="2020-02-02T15:17:26Z" depends-on-methods="TestNG.sanityAllOptionsTest.initialOfferScreen" finished-at="2020-02-02T15:17:26Z">
+        <test-method status="SKIP" signature="finalOfferScreen()[pri:50, instance:TestNG.SanityAllOptions@2cf3d63b]" name="finalOfferScreen" duration-ms="0" started-at="2020-02-02T16:43:39Z" depends-on-methods="TestNG.SanityAllOptions.initialOfferScreen" finished-at="2020-02-02T16:43:39Z">
           <exception class="java.lang.Throwable">
             <message>
-              <![CDATA[Method sanityAllOptionsTest.finalOfferScreen()[pri:50, instance:TestNG.sanityAllOptionsTest@2cf3d63b] depends on not successfully finished methods]]>
+              <![CDATA[Method SanityAllOptions.finalOfferScreen()[pri:50, instance:TestNG.SanityAllOptions@2cf3d63b] depends on not successfully finished methods]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.Throwable: Method sanityAllOptionsTest.finalOfferScreen()[pri:50, instance:TestNG.sanityAllOptionsTest@2cf3d63b] depends on not successfully finished methods
+              <![CDATA[java.lang.Throwable: Method SanityAllOptions.finalOfferScreen()[pri:50, instance:TestNG.SanityAllOptions@2cf3d63b] depends on not successfully finished methods
 at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:888)
 at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
 at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
@@ -97,13 +97,13 @@ at java.lang.Thread.run(Unknown Source)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- finalOfferScreen -->
-        <test-method status="SKIP" signature="covers()[pri:70, instance:TestNG.sanityAllOptionsTest@2cf3d63b]" name="covers" duration-ms="0" started-at="2020-02-02T15:17:26Z" depends-on-methods="TestNG.sanityAllOptionsTest.initialOfferScreen" finished-at="2020-02-02T15:17:26Z">
+        <test-method status="SKIP" signature="covers()[pri:70, instance:TestNG.SanityAllOptions@2cf3d63b]" name="covers" duration-ms="0" started-at="2020-02-02T16:43:39Z" depends-on-methods="TestNG.SanityAllOptions.initialOfferScreen" finished-at="2020-02-02T16:43:39Z">
           <exception class="java.lang.Throwable">
             <message>
-              <![CDATA[Method sanityAllOptionsTest.covers()[pri:70, instance:TestNG.sanityAllOptionsTest@2cf3d63b] depends on not successfully finished methods]]>
+              <![CDATA[Method SanityAllOptions.covers()[pri:70, instance:TestNG.SanityAllOptions@2cf3d63b] depends on not successfully finished methods]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.Throwable: Method sanityAllOptionsTest.covers()[pri:70, instance:TestNG.sanityAllOptionsTest@2cf3d63b] depends on not successfully finished methods
+              <![CDATA[java.lang.Throwable: Method SanityAllOptions.covers()[pri:70, instance:TestNG.SanityAllOptions@2cf3d63b] depends on not successfully finished methods
 at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:888)
 at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
 at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
@@ -123,13 +123,13 @@ at java.lang.Thread.run(Unknown Source)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- covers -->
-        <test-method status="SKIP" signature="payments()[pri:80, instance:TestNG.sanityAllOptionsTest@2cf3d63b]" name="payments" duration-ms="0" started-at="2020-02-02T15:17:26Z" depends-on-methods="TestNG.sanityAllOptionsTest.initialOfferScreen" finished-at="2020-02-02T15:17:26Z">
+        <test-method status="SKIP" signature="payments()[pri:80, instance:TestNG.SanityAllOptions@2cf3d63b]" name="payments" duration-ms="0" started-at="2020-02-02T16:43:39Z" depends-on-methods="TestNG.SanityAllOptions.initialOfferScreen" finished-at="2020-02-02T16:43:39Z">
           <exception class="java.lang.Throwable">
             <message>
-              <![CDATA[Method sanityAllOptionsTest.payments()[pri:80, instance:TestNG.sanityAllOptionsTest@2cf3d63b] depends on not successfully finished methods]]>
+              <![CDATA[Method SanityAllOptions.payments()[pri:80, instance:TestNG.SanityAllOptions@2cf3d63b] depends on not successfully finished methods]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.Throwable: Method sanityAllOptionsTest.payments()[pri:80, instance:TestNG.sanityAllOptionsTest@2cf3d63b] depends on not successfully finished methods
+              <![CDATA[java.lang.Throwable: Method SanityAllOptions.payments()[pri:80, instance:TestNG.SanityAllOptions@2cf3d63b] depends on not successfully finished methods
 at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:888)
 at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
 at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
@@ -149,13 +149,13 @@ at java.lang.Thread.run(Unknown Source)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- payments -->
-        <test-method status="SKIP" signature="returnSteps()[pri:85, instance:TestNG.sanityAllOptionsTest@2cf3d63b]" name="returnSteps" duration-ms="0" started-at="2020-02-02T15:17:26Z" depends-on-methods="TestNG.sanityAllOptionsTest.initialOfferScreen" finished-at="2020-02-02T15:17:26Z">
+        <test-method status="SKIP" signature="returnSteps()[pri:85, instance:TestNG.SanityAllOptions@2cf3d63b]" name="returnSteps" duration-ms="0" started-at="2020-02-02T16:43:39Z" depends-on-methods="TestNG.SanityAllOptions.initialOfferScreen" finished-at="2020-02-02T16:43:39Z">
           <exception class="java.lang.Throwable">
             <message>
-              <![CDATA[Method sanityAllOptionsTest.returnSteps()[pri:85, instance:TestNG.sanityAllOptionsTest@2cf3d63b] depends on not successfully finished methods]]>
+              <![CDATA[Method SanityAllOptions.returnSteps()[pri:85, instance:TestNG.SanityAllOptions@2cf3d63b] depends on not successfully finished methods]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.Throwable: Method sanityAllOptionsTest.returnSteps()[pri:85, instance:TestNG.sanityAllOptionsTest@2cf3d63b] depends on not successfully finished methods
+              <![CDATA[java.lang.Throwable: Method SanityAllOptions.returnSteps()[pri:85, instance:TestNG.SanityAllOptions@2cf3d63b] depends on not successfully finished methods
 at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:888)
 at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
 at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
@@ -175,13 +175,13 @@ at java.lang.Thread.run(Unknown Source)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- returnSteps -->
-        <test-method status="SKIP" signature="forwardSteps()[pri:86, instance:TestNG.sanityAllOptionsTest@2cf3d63b]" name="forwardSteps" duration-ms="0" started-at="2020-02-02T15:17:26Z" depends-on-methods="TestNG.sanityAllOptionsTest.initialOfferScreen" finished-at="2020-02-02T15:17:26Z">
+        <test-method status="SKIP" signature="forwardSteps()[pri:86, instance:TestNG.SanityAllOptions@2cf3d63b]" name="forwardSteps" duration-ms="0" started-at="2020-02-02T16:43:39Z" depends-on-methods="TestNG.SanityAllOptions.initialOfferScreen" finished-at="2020-02-02T16:43:39Z">
           <exception class="java.lang.Throwable">
             <message>
-              <![CDATA[Method sanityAllOptionsTest.forwardSteps()[pri:86, instance:TestNG.sanityAllOptionsTest@2cf3d63b] depends on not successfully finished methods]]>
+              <![CDATA[Method SanityAllOptions.forwardSteps()[pri:86, instance:TestNG.SanityAllOptions@2cf3d63b] depends on not successfully finished methods]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.Throwable: Method sanityAllOptionsTest.forwardSteps()[pri:86, instance:TestNG.sanityAllOptionsTest@2cf3d63b] depends on not successfully finished methods
+              <![CDATA[java.lang.Throwable: Method SanityAllOptions.forwardSteps()[pri:86, instance:TestNG.SanityAllOptions@2cf3d63b] depends on not successfully finished methods
 at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:888)
 at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
 at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
@@ -201,7 +201,7 @@ at java.lang.Thread.run(Unknown Source)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- forwardSteps -->
-      </class> <!-- TestNG.sanityAllOptionsTest -->
+      </class> <!-- TestNG.SanityAllOptions -->
     </test> <!-- Test-class test 1 Production -->
   </suite> <!-- Test-class Suite -->
 </testng-results>

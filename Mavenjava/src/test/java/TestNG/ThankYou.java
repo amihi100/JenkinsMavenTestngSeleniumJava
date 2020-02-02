@@ -6,14 +6,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class thankYouPage {
+public class ThankYou {
 	WebDriver driver;
-	varClass VarClass;
+	VarClass varClass;
 
-	public void thankYouPageMethod(WebDriver driver, varClass VarClass) throws InterruptedException {
+	public void thankYou(WebDriver driver, VarClass varClass) throws InterruptedException {
 		TimeUnit.SECONDS.sleep(5);
-		String URL = VarClass.driver.getCurrentUrl();
-		if (URL == VarClass.thankYouURL || VarClass.wait
+		String URL = varClass.driver.getCurrentUrl();
+		if (URL == varClass.thankYouURL || varClass.wait
 				.until(ExpectedConditions
 						.visibilityOfElementLocated(By.xpath("/html/body/app-root/thank-you-page/div/h1")))
 				.isDisplayed()) {

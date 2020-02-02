@@ -34,7 +34,7 @@ import org.testng.annotations.Test;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-public class varClass {
+public class VarClass {
 
 	public String redPath, environmentURL, environment, panguGUID, carNumber, startInsuranceDate, numberOfDrivers,
 			youngestDriverAge, drivingYears, mortgageCar, yearsOfInsurance, claimsIn3Years, howManyClaims, restrictions,
