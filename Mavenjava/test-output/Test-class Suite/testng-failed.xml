@@ -8,12 +8,12 @@
         <methods>
           <include name="forwardSteps"/>
           <include name="returnSteps"/>
-          <include name="initialOfferQuestions"/>
           <include name="covers"/>
           <include name="initialOfferScreen"/>
           <include name="finalOfferScreen"/>
+          <include name="initialQuestions"/>
+          <include name="finalQuestions"/>
           <include name="payments"/>
-          <include name="finalOfferQuestions"/>
         </methods>
       </class> <!-- TestNG.sanityAllOptionsTest -->
     </classes>

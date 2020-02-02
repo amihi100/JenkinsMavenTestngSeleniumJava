@@ -53,7 +53,7 @@ public class varClass {
 
 	// TODO: WHAT IS WAIT?
 
-	WebDriverWait wait;
+	public WebDriverWait wait;
 
 	public void setWaitClass(WebDriverWait wait) {
 		wait = wait;
