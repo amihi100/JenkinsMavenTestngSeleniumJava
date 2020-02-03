@@ -154,15 +154,14 @@ public class InitialQuestions {
 			JavascriptExecutor js = (JavascriptExecutor) varClass.driver;
 			js.executeScript("$('.accessibility-menu').show()");
 			Instant start = Instant.now();
-			// Screen1.1: Start insurance date.
 			varClass.wait = new WebDriverWait(varClass.driver, varClass.waitForElement);
+			// Screen1.1: Start insurance date.
 			TimeUnit.SECONDS.sleep(varClass.waitBeforeClick+1);
 			varClass.driver.findElementByXPath("//*[@class='mat-datepicker-toggle-default-icon ng-star-inserted']")
 					.click();
+			
 			TimeUnit.SECONDS.sleep(varClass.waitBeforeClick+1);
-			varClass.driver.findElementByXPath(
-					"/html[1]/body[1]/div[1]/div[2]/div[1]/mat-datepicker-content[1]/mat-calendar[1]/div[1]/mat-month-view[1]/table[1]/tbody[1]/tr[2]/td[1]/div[1]")
-					.click();
+			varClass.driver.findElementByCssSelector(".mat-calendar-body-cell-content.mat-calendar-body-today").click();
 			TimeUnit.SECONDS.sleep(varClass.waitBeforeClick);
 			varClass.driver.findElementByXPath("//button[@class='btn-next orange-circle']").click();
 			// Screen1.2: How many drivers.

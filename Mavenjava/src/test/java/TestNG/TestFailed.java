@@ -19,47 +19,30 @@ import org.openqa.selenium.logging.LogEntry;
 public class TestFailed {
 	WebDriver driver;
 	VarClass varClass;
+	ArrayList<String> errorsList = new ArrayList<String>();
 
-	public void saveLogToTXT(WebDriver driver, VarClass varClass ) throws IOException {
+	public void testException(WebDriver driver, VarClass varClass) throws Exception, IOException {
+		TimeUnit.SECONDS.sleep(varClass.waitBeforeClick + 5);
+		String inputLine = varClass.generatedUrlData;
+		// Open buffer reader / writer.
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter out = new BufferedWriter(new FileWriter(
 				varClass.LogAndScreenShotPath + "\\" + varClass.environment + varClass.filename + ".txt"));
 		try {
-			String inputLine = varClass.generatedUrlData;
 			out.write(inputLine);
-			System.out.print("Write to log file.txt successful");
-		} catch (IOException e1) {
-			System.out.println("Error during reading/writing");
-		} finally {
-			out.close();
-			in.close();
-		}
-
-	}
-
-	public void testException(WebDriver driver, VarClass varClass ) throws Exception {
-		ArrayList<String> errorsList = new ArrayList<String>();
-		TimeUnit.SECONDS.sleep(varClass.waitBeforeClick + 7);
-
-		try {
-			// FullScreen:
-//				Dimension windowDimension2;
-//				windowDimension2 = new Dimension(1080, 1920);
-			// Try ScreenShot:
+			// Take ScreenShot:
 			File scrFile = ((TakesScreenshot) varClass.driver).getScreenshotAs(OutputType.FILE);
 			// Now copy .jpeg to screenShotPath
 			scrFile = ((TakesScreenshot) varClass.driver).getScreenshotAs(OutputType.FILE);
 			FileUtils.copyFile(scrFile, new File(
 					varClass.LogAndScreenShotPath + "\\" + varClass.environment + varClass.filename + ".jpeg"));
 			TimeUnit.SECONDS.sleep(varClass.waitBeforeClick);
-
 		} catch (Exception e) {
 			e.printStackTrace();
 			throw new Exception("Failed in ScreenShot");
 		}
 		try {
-			// Wait +7 seconds for iiii site.
-			TimeUnit.SECONDS.sleep(varClass.waitBeforeClick + 7);
+
 			// Print logs from console (Warnings and Errors ONLY!)
 			System.out.println("Errors logs:");
 			LogEntries logs = varClass.driver.manage().logs().get("browser");
@@ -68,8 +51,9 @@ public class TestFailed {
 				errorsList.add(entry.getMessage());
 			}
 			;
-
-			// Email:
+			// Wait +7 seconds for iiii site.
+			TimeUnit.SECONDS.sleep(varClass.waitBeforeClick + 7);
+			// Email fields:
 			varClass.driver.get("https://iiii.co.il/#contact");
 			TimeUnit.SECONDS.sleep(varClass.waitBeforeClick + 5);
 			varClass.driver.findElementByXPath("//input[@placeholder='Your name']")
@@ -81,36 +65,31 @@ public class TestFailed {
 			varClass.driver.findElementByXPath("//input[@placeholder='Subject']")
 					.sendKeys(varClass.environment + " Error");
 			TimeUnit.MILLISECONDS.sleep(varClass.MILLISECONDS);
-
 			//////////////////// NEW/////////////////
 			// Send userID and pid:
 			varClass.driver.findElementByXPath("//textarea[@placeholder='Message']")
 					.sendKeys(varClass.generatedUrlData + "<br>");
 			// Send Warnings and Errors ONLY!:
-			System.out.println("Here are logs in Message email: ");
+			System.out.println("****Here are logs in Message email:****");
 			for (int i = 0; i < errorsList.size(); i++) {
 				System.out.println(errorsList.get(i));
 				varClass.driver.findElementByXPath("//textarea[@placeholder='Message']")
 						.sendKeys(errorsList.get(i) + "</br>");
+				out.write(errorsList.get(i) + "</br>");
 			}
-			;
-			TimeUnit.SECONDS.sleep(varClass.waitBeforeClick + 4);
-			;
+			System.out.print("Write to log file.txt successful");
+			TimeUnit.SECONDS.sleep(varClass.waitBeforeClick + 3);
 			varClass.driver.findElementByXPath("//input[@class='wpcf7-form-control wpcf7-submit']").click();
 			// Wait +7 seconds for iiii site.
-			TimeUnit.SECONDS.sleep(varClass.waitBeforeClick + 4);
-			// Save log to txt file.
-			saveLogToTXT(varClass.driver, varClass);
-
-		} catch (Exception e) {
-			e.printStackTrace();
-			throw new Exception("Failed in Email send by iiii.co.il");
+			TimeUnit.SECONDS.sleep(varClass.waitBeforeClick + 3);
+			// Close save log to txt file.
+		} finally {
+			out.close();
+			in.close();
 		}
 		// Close agent
 		varClass.driver.quit();
 	}
-	
-	
 
 	public void testFailed(WebDriver driver, VarClass varClass) throws Exception {
 		try {
