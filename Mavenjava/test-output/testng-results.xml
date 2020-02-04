@@ -1,130 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="2" failed="1" ignored="1" total="12" passed="8">
+<testng-results skipped="0" failed="0" ignored="4" total="12" passed="8">
   <reporter-output>
   </reporter-output>
-  <suite name="Test-class Suite" duration-ms="494975" started-at="2020-02-04T07:46:11Z" finished-at="2020-02-04T07:54:26Z">
+  <suite name="Test-class Suite" duration-ms="419127" started-at="2020-02-04T09:17:24Z" finished-at="2020-02-04T09:24:23Z">
     <groups>
     </groups>
-    <test name="Test-class test 1 Production" duration-ms="494975" started-at="2020-02-04T07:46:11Z" finished-at="2020-02-04T07:54:26Z">
+    <test name="Test-class test 1 Production" duration-ms="419127" started-at="2020-02-04T09:17:24Z" finished-at="2020-02-04T09:24:23Z">
       <class name="TestNG.SanityAllOptions">
-        <test-method status="PASS" signature="initialQuestions()[pri:10, instance:TestNG.SanityAllOptions@8f2ef19]" name="initialQuestions" duration-ms="55000" started-at="2020-02-04T07:46:11Z" finished-at="2020-02-04T07:47:06Z">
+        <test-method status="PASS" signature="initialQuestions()[pri:10, instance:TestNG.SanityAllOptions@2af004b]" name="initialQuestions" duration-ms="53890" started-at="2020-02-04T09:17:24Z" finished-at="2020-02-04T09:18:18Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialQuestions -->
-        <test-method status="PASS" signature="initialOfferScreen()[pri:30, instance:TestNG.SanityAllOptions@8f2ef19]" name="initialOfferScreen" duration-ms="47418" started-at="2020-02-04T07:47:06Z" depends-on-methods="TestNG.SanityAllOptions.initialQuestions" finished-at="2020-02-04T07:47:53Z">
+        <test-method status="PASS" signature="initialOfferScreen()[pri:30, instance:TestNG.SanityAllOptions@2af004b]" name="initialOfferScreen" duration-ms="47758" started-at="2020-02-04T09:18:18Z" depends-on-methods="TestNG.SanityAllOptions.initialQuestions" finished-at="2020-02-04T09:19:06Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialOfferScreen -->
-        <test-method status="PASS" signature="finalQuestions()[pri:40, instance:TestNG.SanityAllOptions@8f2ef19]" name="finalQuestions" duration-ms="79623" started-at="2020-02-04T07:47:53Z" depends-on-methods="TestNG.SanityAllOptions.initialOfferScreen" finished-at="2020-02-04T07:49:13Z">
+        <test-method status="PASS" signature="finalQuestions()[pri:40, instance:TestNG.SanityAllOptions@2af004b]" name="finalQuestions" duration-ms="80325" started-at="2020-02-04T09:19:06Z" depends-on-methods="TestNG.SanityAllOptions.initialOfferScreen" finished-at="2020-02-04T09:20:26Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- finalQuestions -->
-        <test-method status="PASS" signature="finalOfferScreen()[pri:50, instance:TestNG.SanityAllOptions@8f2ef19]" name="finalOfferScreen" duration-ms="32969" started-at="2020-02-04T07:49:13Z" depends-on-methods="TestNG.SanityAllOptions.finalQuestions" finished-at="2020-02-04T07:49:46Z">
+        <test-method status="PASS" signature="finalOfferScreen()[pri:50, instance:TestNG.SanityAllOptions@2af004b]" name="finalOfferScreen" duration-ms="32823" started-at="2020-02-04T09:20:26Z" depends-on-methods="TestNG.SanityAllOptions.finalQuestions" finished-at="2020-02-04T09:20:59Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- finalOfferScreen -->
-        <test-method status="PASS" signature="covers()[pri:70, instance:TestNG.SanityAllOptions@8f2ef19]" name="covers" duration-ms="6036" started-at="2020-02-04T07:49:46Z" depends-on-methods="TestNG.SanityAllOptions.finalOfferScreen" finished-at="2020-02-04T07:49:52Z">
+        <test-method status="PASS" signature="covers()[pri:70, instance:TestNG.SanityAllOptions@2af004b]" name="covers" duration-ms="5616" started-at="2020-02-04T09:20:59Z" depends-on-methods="TestNG.SanityAllOptions.finalOfferScreen" finished-at="2020-02-04T09:21:05Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- covers -->
-        <test-method status="PASS" signature="payments()[pri:80, instance:TestNG.SanityAllOptions@8f2ef19]" name="payments" duration-ms="27920" started-at="2020-02-04T07:49:52Z" depends-on-methods="TestNG.SanityAllOptions.covers" finished-at="2020-02-04T07:50:20Z">
+        <test-method status="PASS" signature="payments()[pri:80, instance:TestNG.SanityAllOptions@2af004b]" name="payments" duration-ms="27846" started-at="2020-02-04T09:21:05Z" depends-on-methods="TestNG.SanityAllOptions.covers" finished-at="2020-02-04T09:21:33Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- payments -->
-        <test-method status="PASS" signature="returnSteps()[pri:85, instance:TestNG.SanityAllOptions@8f2ef19]" name="returnSteps" duration-ms="71288" started-at="2020-02-04T07:50:20Z" depends-on-methods="TestNG.SanityAllOptions.payments" finished-at="2020-02-04T07:51:31Z">
+        <test-method status="PASS" signature="returnSteps()[pri:85, instance:TestNG.SanityAllOptions@2af004b]" name="returnSteps" duration-ms="70569" started-at="2020-02-04T09:21:33Z" depends-on-methods="TestNG.SanityAllOptions.payments" finished-at="2020-02-04T09:22:43Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- returnSteps -->
-        <test-method status="PASS" signature="forwardSteps()[pri:86, instance:TestNG.SanityAllOptions@8f2ef19]" name="forwardSteps" duration-ms="100243" started-at="2020-02-04T07:51:31Z" depends-on-methods="TestNG.SanityAllOptions.returnSteps" finished-at="2020-02-04T07:53:11Z">
+        <test-method status="PASS" signature="forwardSteps()[pri:86, instance:TestNG.SanityAllOptions@2af004b]" name="forwardSteps" duration-ms="100251" started-at="2020-02-04T09:22:43Z" depends-on-methods="TestNG.SanityAllOptions.returnSteps" finished-at="2020-02-04T09:24:23Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- forwardSteps -->
-        <test-method status="FAIL" signature="iframeCreditGuard()[pri:90, instance:TestNG.SanityAllOptions@8f2ef19]" name="iframeCreditGuard" duration-ms="74393" started-at="2020-02-04T07:53:11Z" depends-on-methods="TestNG.SanityAllOptions.forwardSteps" finished-at="2020-02-04T07:54:26Z">
-          <exception class="java.lang.Exception">
-            <message>
-              <![CDATA[Failed in Iframe CreditGuard]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.Exception: Failed in Iframe CreditGuard
-at TestNG.SanityAllOptions.iframeCreditGuard(SanityAllOptions.java:215)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-at java.lang.reflect.Method.invoke(Unknown Source)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
-at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.access$000(SuiteRunner.java:40)
-at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:489)
-at org.testng.internal.thread.ThreadUtil$1.call(ThreadUtil.java:52)
-at java.util.concurrent.FutureTask.run(Unknown Source)
-at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-at java.lang.Thread.run(Unknown Source)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.Exception -->
+        <test-method status="PASS" signature="closeChrome()[pri:0, instance:TestNG.SanityAllOptions@2af004b]" name="closeChrome" is-config="true" duration-ms="1376" started-at="2020-02-04T09:24:23Z" finished-at="2020-02-04T09:24:25Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- iframeCreditGuard -->
-        <test-method status="SKIP" signature="thankYouPage()[pri:100, instance:TestNG.SanityAllOptions@8f2ef19]" name="thankYouPage" duration-ms="0" started-at="2020-02-04T07:54:26Z" depends-on-methods="TestNG.SanityAllOptions.iframeCreditGuard" finished-at="2020-02-04T07:54:26Z">
-          <exception class="java.lang.Throwable">
-            <message>
-              <![CDATA[Method SanityAllOptions.thankYouPage()[pri:100, instance:TestNG.SanityAllOptions@8f2ef19] depends on not successfully finished methods]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.Throwable: Method SanityAllOptions.thankYouPage()[pri:100, instance:TestNG.SanityAllOptions@8f2ef19] depends on not successfully finished methods
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:888)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.access$000(SuiteRunner.java:40)
-at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:489)
-at org.testng.internal.thread.ThreadUtil$1.call(ThreadUtil.java:52)
-at java.util.concurrent.FutureTask.run(Unknown Source)
-at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-at java.lang.Thread.run(Unknown Source)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.Throwable -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- thankYouPage -->
-        <test-method status="SKIP" signature="registeredAccount()[pri:110, instance:TestNG.SanityAllOptions@8f2ef19]" name="registeredAccount" duration-ms="0" started-at="2020-02-04T07:54:26Z" depends-on-methods="TestNG.SanityAllOptions.thankYouPage" finished-at="2020-02-04T07:54:26Z">
-          <exception class="java.lang.Throwable">
-            <message>
-              <![CDATA[Method SanityAllOptions.registeredAccount()[pri:110, instance:TestNG.SanityAllOptions@8f2ef19] depends on not successfully finished methods]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.Throwable: Method SanityAllOptions.registeredAccount()[pri:110, instance:TestNG.SanityAllOptions@8f2ef19] depends on not successfully finished methods
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:888)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.access$000(SuiteRunner.java:40)
-at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:489)
-at org.testng.internal.thread.ThreadUtil$1.call(ThreadUtil.java:52)
-at java.util.concurrent.FutureTask.run(Unknown Source)
-at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-at java.lang.Thread.run(Unknown Source)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.Throwable -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- registeredAccount -->
+        </test-method> <!-- closeChrome -->
       </class> <!-- TestNG.SanityAllOptions -->
     </test> <!-- Test-class test 1 Production -->
   </suite> <!-- Test-class Suite -->
