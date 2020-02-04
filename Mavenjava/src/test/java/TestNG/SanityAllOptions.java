@@ -10,6 +10,7 @@ import org.testng.annotations.Test;
 import java.io.FileNotFoundException;
 import java.util.InvalidPropertiesFormatException;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.Parameters;
 //import java.io.BufferedReader;
 //import java.io.BufferedWriter;
@@ -203,8 +204,8 @@ public class SanityAllOptions {
 		}
 	}
 
-	//@Test(enabled = false)
-	 @Test(priority = 90, dependsOnMethods="forwardSteps")
+	@Test(enabled = false)
+	 //@Test(priority = 90, dependsOnMethods="forwardSteps")
 	public void iframeCreditGuard() throws Exception {
 		try {
 			iframeCreditGuard.iframeCreditGuard(varClass.driver, varClass);
@@ -216,8 +217,8 @@ public class SanityAllOptions {
 		}
 	}
 
-	//@Test(enabled = false)
-	@Test(priority = 100, dependsOnMethods="iframeCreditGuard")
+	@Test(enabled = false)
+	//@Test(priority = 100, dependsOnMethods="iframeCreditGuard")
 	public void thankYouPage() throws Exception {
 		try {
 			thankYou.thankYou(varClass.driver, varClass);
@@ -228,8 +229,8 @@ public class SanityAllOptions {
 		}
 	}
 
-	//@Test(enabled = false)
-	@Test(priority = 110, dependsOnMethods="thankYouPage")
+	@Test(enabled = false)
+	//@Test(priority = 110, dependsOnMethods="thankYouPage")
 	public void registeredAccount() throws Exception {
 		try {
 			registeredAccount.registeredAccount(varClass.driver, varClass);
@@ -245,5 +246,11 @@ public class SanityAllOptions {
 			System.out.println("Closed tab and deleted cookies");
 		}
 	}
+	
+	@AfterSuite()
+	public void closeChrome() {
+		varClass.driver.quit();
+	}
+	
 
 }

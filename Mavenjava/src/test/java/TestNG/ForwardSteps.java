@@ -100,7 +100,7 @@ public class ForwardSteps {
 		TimeUnit.SECONDS.sleep(10);
 
 		// finalOfferScreen:
-		TimeUnit.SECONDS.sleep(varClass.waitBeforeClick + 1);
+		TimeUnit.SECONDS.sleep(varClass.waitBeforeClick + 2);
 		varClass.driver.findElementByXPath("//a[@class='link-procceed']").click();
 
 		// coversScreen:

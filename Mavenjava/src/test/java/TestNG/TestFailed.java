@@ -89,7 +89,6 @@ public class TestFailed {
 			// Close save log to txt file.
 			out.close();
 			in.close();
-			varClass.driver.quit();
 			
 //		} finally {
 //			out.close();
