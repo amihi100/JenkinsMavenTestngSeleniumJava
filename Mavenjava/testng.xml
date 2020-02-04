@@ -4,7 +4,7 @@
 <!-- ***** Pay attention to thread-count ******* -->
 <suite name="Test-class Suite" parallel="tests" thread-count="2">
 
-	 <test name="Test-class test 1 Production"> <parameter name="xml" value="dev" 
+	 <test name="Test-class test 1 Production"> <parameter name="xml" value="stage" 
 		/> <classes> <class name="TestNG.SanityAllOptions" /> </classes> </test> 
 <!-- 
 	<test name="Test-class test 2 DEV or STAGE">

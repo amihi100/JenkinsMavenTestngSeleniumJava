@@ -22,14 +22,17 @@ public class TestFailed {
 	ArrayList<String> errorsList = new ArrayList<String>();
 
 	public void testException(WebDriver driver, VarClass varClass) throws Exception, IOException {
+		System.out.println("Enterd testException class!");
 		TimeUnit.SECONDS.sleep(varClass.waitBeforeClick + 5);
 		String inputLine = varClass.generatedUrlData;
 		// Open buffer reader / writer.
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter out = new BufferedWriter(new FileWriter(
 				varClass.LogAndScreenShotPath + "\\" + varClass.environment + varClass.filename + ".txt"));
-		try {
+//		try {
+			System.out.println("Input line: " +inputLine);
 			out.write(inputLine);
+			
 			// Take ScreenShot:
 			File scrFile = ((TakesScreenshot) varClass.driver).getScreenshotAs(OutputType.FILE);
 			// Now copy .jpeg to screenShotPath
@@ -37,12 +40,13 @@ public class TestFailed {
 			FileUtils.copyFile(scrFile, new File(
 					varClass.LogAndScreenShotPath + "\\" + varClass.environment + varClass.filename + ".jpeg"));
 			TimeUnit.SECONDS.sleep(varClass.waitBeforeClick);
-		} catch (Exception e) {
-			e.printStackTrace();
-			throw new Exception("Failed in ScreenShot");
-		}
-		try {
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//			throw new Exception("Failed in ScreenShot");
+//		}
+//		try {
 
+			
 			// Print logs from console (Warnings and Errors ONLY!)
 			System.out.println("Errors logs:");
 			LogEntries logs = varClass.driver.manage().logs().get("browser");
@@ -83,12 +87,16 @@ public class TestFailed {
 			// Wait +7 seconds for iiii site.
 			TimeUnit.SECONDS.sleep(varClass.waitBeforeClick + 3);
 			// Close save log to txt file.
-		} finally {
 			out.close();
 			in.close();
-		}
-		// Close agent
-		varClass.driver.quit();
+			varClass.driver.quit();
+			
+//		} finally {
+//			out.close();
+//			in.close();
+//		}
+//		// Close agent
+//		varClass.driver.quit();
 	}
 
 	public void testFailed(WebDriver driver, VarClass varClass) throws Exception {

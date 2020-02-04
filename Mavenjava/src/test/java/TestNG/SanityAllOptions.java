@@ -4,34 +4,35 @@ package TestNG;
  * amihi100@gmail.com
  * Version 1.3
  */
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
+
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.time.Duration;
-import java.time.Instant;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.InvalidPropertiesFormatException;
-import java.util.concurrent.TimeUnit;
-import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.By;
-import org.openqa.selenium.By.ByXPath;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.logging.LogEntries;
-import org.openqa.selenium.logging.LogEntry;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebElement;
+import java.io.FileNotFoundException;
+import java.util.InvalidPropertiesFormatException;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Parameters;
+//import java.io.BufferedReader;
+//import java.io.BufferedWriter;
+//import java.io.File;
+//import java.io.FileWriter;
+//import java.io.InputStreamReader;
+//import java.time.Duration;
+//import java.time.Instant;
+//import java.util.ArrayList;
+//import java.util.Calendar;
+//import java.util.concurrent.TimeUnit;
+//import org.apache.commons.io.FileUtils;
+//import org.openqa.selenium.By;
+//import org.openqa.selenium.By.ByXPath;
+//import org.openqa.selenium.JavascriptExecutor;
+//import org.openqa.selenium.OutputType;
+//import org.openqa.selenium.interactions.Actions;
+//import org.openqa.selenium.logging.LogEntries;
+//import org.openqa.selenium.logging.LogEntry;
+//import org.openqa.selenium.support.ui.ExpectedConditions;
+//import org.openqa.selenium.support.ui.Select;
+//import org.openqa.selenium.TakesScreenshot;
+//import org.openqa.selenium.WebElement;
 //import java.io.PrintStream;
 //import java.text.DateFormat;
 //import java.text.SimpleDateFormat;
@@ -145,7 +146,7 @@ public class SanityAllOptions {
 		}
 	}
 
-	@Test(priority = 50, dependsOnMethods="initialOfferScreen")
+	@Test(priority = 50, dependsOnMethods="finalQuestions")
 	public void finalOfferScreen() throws Exception {
 		try {
 			finalOfferScreen.finalOfferScreen(varClass.driver, varClass);
@@ -157,7 +158,7 @@ public class SanityAllOptions {
 	}
 	
 
-	@Test(priority = 70, dependsOnMethods="initialOfferScreen")
+	@Test(priority = 70, dependsOnMethods="finalOfferScreen")
 	public void covers() throws Exception {
 		covers.covers(varClass.driver, varClass);
 		try {
@@ -169,7 +170,7 @@ public class SanityAllOptions {
 		}
 	}
 
-	@Test(priority = 80, dependsOnMethods="initialOfferScreen")
+	@Test(priority = 80, dependsOnMethods="covers")
 	public void payments() throws Exception {
 		try {
 			payments.payments(varClass.driver, varClass);
@@ -179,8 +180,8 @@ public class SanityAllOptions {
 			throw new Exception("Failed in PAYMENTS screen");
 		}
 	}
-
-	@Test(priority = 85, dependsOnMethods="initialOfferScreen")
+	//@Test(enabled = false)
+	@Test(priority = 85, dependsOnMethods="payments")
 	public void returnSteps() throws Exception {
 		try {
 			returnSteps.returnSteps(varClass.driver, varClass);
@@ -190,8 +191,8 @@ public class SanityAllOptions {
 			throw new Exception("Failed in moveing BACKWARD");
 		}
 	}
-
-	@Test(priority = 86, dependsOnMethods="initialOfferScreen")
+	//@Test(enabled = false)
+	@Test(priority = 86, dependsOnMethods="returnSteps")
 	public void forwardSteps() throws Exception {
 		try {
 			forwardSteps.forwardSteps(varClass.driver, varClass);
@@ -203,7 +204,7 @@ public class SanityAllOptions {
 	}
 
 	//@Test(enabled = false)
-	 @Test(priority = 90, dependsOnMethods="initialOfferScreen")
+	 @Test(priority = 90, dependsOnMethods="forwardSteps")
 	public void iframeCreditGuard() throws Exception {
 		try {
 			iframeCreditGuard.iframeCreditGuard(varClass.driver, varClass);
@@ -216,7 +217,7 @@ public class SanityAllOptions {
 	}
 
 	//@Test(enabled = false)
-	 @Test(priority = 100, dependsOnMethods="initialOfferScreen")
+	@Test(priority = 100, dependsOnMethods="iframeCreditGuard")
 	public void thankYouPage() throws Exception {
 		try {
 			thankYou.thankYou(varClass.driver, varClass);
@@ -228,7 +229,7 @@ public class SanityAllOptions {
 	}
 
 	//@Test(enabled = false)
-	 @Test(priority = 110, dependsOnMethods="initialOfferScreen")
+	@Test(priority = 110, dependsOnMethods="thankYouPage")
 	public void registeredAccount() throws Exception {
 		try {
 			registeredAccount.registeredAccount(varClass.driver, varClass);
