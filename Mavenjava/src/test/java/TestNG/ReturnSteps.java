@@ -16,7 +16,7 @@ public class ReturnSteps {
 	
 	public void returnSteps(WebDriver driver, VarClass varClass) throws InterruptedException {
 		
-
+		TimeUnit.SECONDS.sleep(varClass.waitBeforeClick + 1);
 		// return from payments to covers:
 		varClass.driver.findElementByXPath("//div[@class='account']//button[@class='btn-empty']").click();
 		TimeUnit.MILLISECONDS.sleep(varClass.MILLISECONDS + 1);
