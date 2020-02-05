@@ -10,11 +10,9 @@
           <include name="payments"/>
           <include name="initialOfferScreen"/>
           <include name="returnSteps"/>
-          <include name="iframeCreditGuard"/>
-          <include name="registeredAccount"/>
+          <include name="closeChrome"/>
           <include name="forwardSteps"/>
           <include name="covers"/>
-          <include name="thankYouPage"/>
           <include name="initialQuestions"/>
           <include name="finalQuestions"/>
         </methods>
