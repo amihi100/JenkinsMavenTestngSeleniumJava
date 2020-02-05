@@ -14,6 +14,10 @@ public class ReturnSteps {
 	VarClass varClass;
 	
 	
+	
+	
+	
+	
 	public void returnSteps(WebDriver driver, VarClass varClass) throws InterruptedException {
 		
 		TimeUnit.SECONDS.sleep(varClass.waitBeforeClick + 1);

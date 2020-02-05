@@ -12,43 +12,7 @@ import java.util.InvalidPropertiesFormatException;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.Parameters;
-//import java.io.BufferedReader;
-//import java.io.BufferedWriter;
-//import java.io.File;
-//import java.io.FileWriter;
-//import java.io.InputStreamReader;
-//import java.time.Duration;
-//import java.time.Instant;
-//import java.util.ArrayList;
-//import java.util.Calendar;
-//import java.util.concurrent.TimeUnit;
-//import org.apache.commons.io.FileUtils;
-//import org.openqa.selenium.By;
-//import org.openqa.selenium.By.ByXPath;
-//import org.openqa.selenium.JavascriptExecutor;
-//import org.openqa.selenium.OutputType;
-//import org.openqa.selenium.interactions.Actions;
-//import org.openqa.selenium.logging.LogEntries;
-//import org.openqa.selenium.logging.LogEntry;
-//import org.openqa.selenium.support.ui.ExpectedConditions;
-//import org.openqa.selenium.support.ui.Select;
-//import org.openqa.selenium.TakesScreenshot;
-//import org.openqa.selenium.WebElement;
-//import java.io.PrintStream;
-//import java.text.DateFormat;
-//import java.text.SimpleDateFormat;
-//import java.io.FileOutputStream;
-//import java.util.Date;
-//import java.util.Scanner;
-//import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
-//import org.openqa.selenium.Dimension;
-//import org.openqa.selenium.Keys;
-//import org.openqa.selenium.logging.LogType;
-//import com.google.errorprone.annotations.Var;
-//import org.openqa.selenium.chrome.ChromeOptions;
-//import org.testng.SkipException;
-//import org.testng.annotations.BeforeMethod;
-//import com.google.common.base.Stopwatch;
+
 
 /**
  * import of take screenshot and save a file: import java.io.File; import
