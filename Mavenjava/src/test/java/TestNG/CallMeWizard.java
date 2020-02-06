@@ -1,7 +1,6 @@
 package TestNG;
 
 import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -55,7 +54,5 @@ public class CallMeWizard {
 		TimeUnit.MILLISECONDS.sleep(1500);
 		TimeUnit.SECONDS.sleep(varClass.waitBeforeClick);
 		varClass.driver.findElementByXPath(j).click();
-
 	}
-
 }

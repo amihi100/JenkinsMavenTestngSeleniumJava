@@ -11,7 +11,6 @@ public class RegisteredAccount {
 
 	public void registeredAccount(WebDriver driver, VarClass varClass) throws InterruptedException {
 		TimeUnit.SECONDS.sleep(3);
-
 		TimeUnit.SECONDS.sleep(varClass.waitBeforeClick);
 		if (varClass.appID) {
 			varClass.driver.get(varClass.environmentURL);

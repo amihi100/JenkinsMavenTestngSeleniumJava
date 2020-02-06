@@ -1,7 +1,6 @@
 package TestNG;
 
 import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -66,36 +65,23 @@ public class InitialOfferScreen {
 		// Printing the secure level from Menora:
 		System.out.println("Protect gear needed: "
 				+ varClass.driver.findElementByXPath("//h2[@id='shield__modal_title']").getText().toString());
-
 		varClass.driver.findElementByXPath("//*[@id=\"modal-shield\"]/div[1]/div/div[1]/button/img").click();
 		TimeUnit.MILLISECONDS.sleep(varClass.MILLISECONDS);
 		// Terms of condition:
 		varClass.driver.findElementByXPath("//span[@class='bid-id']//a[@class='privacy-policy']").click();
 		TimeUnit.MILLISECONDS.sleep(varClass.MILLISECONDS);
-
 		varClass.driver.findElementByXPath("//*[@id=\"modal-privacy-policy\"]/div[1]/div/div[1]/button/img")
 				.click();
-
 		TimeUnit.MILLISECONDS.sleep(varClass.MILLISECONDS);
 		// Privacy policy:
-
 		varClass.driver
 				.findElementByXPath("/html[1]/body[1]/app-root[1]/primary-bid[1]/div[1]/div[1]/div[4]/span[1]/a[2]")
 				.click();
-
 		TimeUnit.MILLISECONDS.sleep(varClass.MILLISECONDS);
-
 		varClass.driver.findElementByXPath("//*[@id=\"modal-privacy-policy\"]/div[1]/div/div[1]/button/img")
 				.click();
 		TimeUnit.MILLISECONDS.sleep(varClass.MILLISECONDS);
-
 		TimeUnit.SECONDS.sleep(varClass.waitBeforeClick);
-		varClass.driver.findElementByXPath("//*[@id=\"primary_bid_div\"]/div[1]/a[1]").click();
-
-
-		
-		
-	}
-	
-	
+		varClass.driver.findElementByXPath("//*[@id=\"primary_bid_div\"]/div[1]/a[1]").click();		
+	}		
 }

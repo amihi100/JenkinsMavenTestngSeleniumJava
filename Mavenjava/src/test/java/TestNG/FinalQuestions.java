@@ -1,7 +1,6 @@
 package TestNG;
 
 import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -20,7 +19,6 @@ public class FinalQuestions {
 		// return female as defulat.
 		return "//select[@id='step-1-gender-3']//option[3]";
 	}
-
 	// Screen 4.2 criminal record and policy refusal.
 	public String criminalAndRefuse(int a) {
 		// 0 no change - green path. 1 = criminal record. 2 = policy refuse.
@@ -29,7 +27,6 @@ public class FinalQuestions {
 		} else
 			return "//aw-wizard-step[7]//div[1]//ul[1]//li[2]//question-wrapper[1]//div[1]//div[1]//app-step-content-horizontal-options-view[1]//ul[1]//li[1]//label[1]//span[1]";
 	}
-
 	public void finalQuestions(WebDriver driver, VarClass varClass) throws InterruptedException {
 
 		// Screen2.1: Privacy details of policy owner.
@@ -49,7 +46,6 @@ public class FinalQuestions {
 				.click();
 		TimeUnit.MILLISECONDS.sleep(varClass.MILLISECONDS);
 		// birthdate:
-
 		varClass.driver.findElementByXPath("//input[@id='step-1-birthDate-4']").clear();
 		TimeUnit.MILLISECONDS.sleep(varClass.MILLISECONDS);
 		varClass.driver.findElementByXPath("//*[@id=\"step-1-birthDate-4\"]").sendKeys(varClass.insuredBirthDate);
@@ -88,9 +84,7 @@ public class FinalQuestions {
 				.findElementByXPath(
 						"/html/body/app-root/external-app-offer/aw-wizard/div/aw-wizard-step[2]/div/div/button[1]")
 				.click();
-
 		// Screen2.3: 3 questions for driver and policy owner.
-
 		TimeUnit.SECONDS.sleep(1);
 		varClass.wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"/html/body/app-root/external-app-offer/aw-wizard/div/aw-wizard-step[3]/div/ul/li[1]/question-wrapper/div/div/app-step-content-horizontal-options-view/ul/li[2]/label/span[1]")));
@@ -122,7 +116,6 @@ public class FinalQuestions {
 						"/html/body/app-root/external-app-offer/aw-wizard/div/aw-wizard-step[3]/div/div/button[1]")
 				.click();
 		TimeUnit.SECONDS.sleep(varClass.waitBeforeClick);
-
 		// question for additional driver:
 		if (varClass.driver
 				.findElementByXPath("/html/body/app-root/external-app-offer/aw-wizard/div/aw-wizard-step[5]/div/h1")
@@ -136,7 +129,6 @@ public class FinalQuestions {
 					.sendKeys(varClass.driver1LastName);
 			varClass.driver.findElementByXPath("//*[@id=\"step-5-personalId-2\"]").sendKeys(varClass.driver1Id);
 			// birthdate:
-
 			varClass.driver.findElementByXPath("//*[@id=\"step-5-birthDate-3\"]").clear();
 			TimeUnit.MILLISECONDS.sleep(varClass.MILLISECONDS);
 			varClass.driver.findElementByXPath("//*[@id=\"step-5-birthDate-3\"]").sendKeys(varClass.driver1BirthDate);
@@ -152,7 +144,6 @@ public class FinalQuestions {
 
 			// End if additional driver1.
 		}
-
 		// question for additional 2second driver:
 		TimeUnit.SECONDS.sleep(varClass.waitBeforeClick);
 		if (Integer.parseInt(varClass.numberOfDrivers) == 3) {
@@ -160,12 +151,11 @@ public class FinalQuestions {
 					By.xpath("/html/body/app-root/external-app-offer/aw-wizard/div/aw-wizard-step[6]/div/h1")));
 			TimeUnit.SECONDS.sleep(2);
 			// Screen2.1: Privacy details of policy owner.
-
 			varClass.driver.findElementByXPath("//*[@id=\"step-10-firstName-0\"]").sendKeys(varClass.driver2Name);
 			varClass.driver.findElementByXPath("//*[@id=\"step-10-lastName-1\"]")
 					.sendKeys(varClass.driver2LastName);
 			varClass.driver.findElementByXPath("//*[@id=\"step-10-personalId-2\"]").sendKeys(varClass.driver2Id);
-			// birthdate:
+			// birthDate:
 			varClass.driver.findElementByXPath("//*[@id=\"step-10-birthDate-3\"]").clear();
 			TimeUnit.MILLISECONDS.sleep(varClass.MILLISECONDS);
 			varClass.driver.findElementByXPath("//*[@id=\"step-10-birthDate-3\"]").sendKeys(varClass.driver2BirthDate);
@@ -181,7 +171,6 @@ public class FinalQuestions {
 			// End if additional driver2.
 			// }
 		}
-
 		// Screen2.4: questions for criminal record and policy refuse.
 		varClass.wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"/html/body/app-root/external-app-offer/aw-wizard/div/aw-wizard-step[7]/div/ul/li[1]/question-wrapper/div/div/app-step-content-horizontal-options-view/ul/li[1]/label/span[1]")));
@@ -203,7 +192,6 @@ public class FinalQuestions {
 				.click();
 		// Value for red path Scenario:
 		try {
-
 			if (Integer.parseInt(varClass.numberOfDrivers) == 1 || Integer.parseInt(varClass.numberOfDrivers) == 2) {
 				TimeUnit.SECONDS.sleep(1);
 				varClass.driver.findElementByXPath(criminalAndRefuse(Integer.parseInt(varClass.numberOfDrivers)))
@@ -214,7 +202,6 @@ public class FinalQuestions {
 			// TODO: handle exception
 			System.out.println("No red path of final offer");
 		}
-
 		TimeUnit.SECONDS.sleep(varClass.waitBeforeClick);
 		varClass.driver
 				.findElementByXPath(
@@ -248,7 +235,5 @@ public class FinalQuestions {
 				.findElementByXPath(
 						"/html/body/app-root/external-app-offer/aw-wizard/div/aw-wizard-step[8]/div/div/button[1]")
 				.click();
-
 	}
-
 }

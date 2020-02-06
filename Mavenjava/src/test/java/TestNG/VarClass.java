@@ -10,30 +10,16 @@ import java.util.Properties;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
-
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.logging.LogEntries;
-import org.openqa.selenium.logging.LogEntry;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.logging.LogType;
 import org.openqa.selenium.logging.LoggingPreferences;
 import org.openqa.selenium.remote.CapabilityType;
-import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Reporter;
-import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
-
-import org.testng.ITestContext;
-import org.testng.Reporter;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
-
-import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
-
+import org.openqa.selenium.logging.LogEntry;
+import org.json.simple.parser.JSONParser;
 public class VarClass {
 
 	/// ###*** Start: Define in each machine ***###///
@@ -58,16 +44,15 @@ public class VarClass {
 
 	public WebDriverWait wait;
 
-	public void setWaitClass(WebDriverWait wait) {
-		wait = wait;
-	}
+//	public void setWaitClass(WebDriverWait wait) {
+//		wait = wait;
+//	}
 
 	// @Test(priority = 0, groups={"varClass.defineVariables"})
 	@Parameters({ "xml", "env" })
 	public void defineVariables(String xml) throws Exception {
-
 		try {
-
+			JSONParser parser = new JSONParser();
 			Properties varProps = new Properties();
 			windowDimension = new Dimension(372, 900);
 			String dir = System.getProperty("user.dir");
@@ -76,9 +61,9 @@ public class VarClass {
 			System.out.println("Root path:" + rootPath);
 			// String filePath = MessageFormat.format("{0}\\configXml\\{1}\\config.{2}.xml",
 			// dir, xml);
+			
 			String filePath = MessageFormat.format("{0}\\configXml\\config.{1}.xml", dir, xml);
 			System.out.println("xml file path: " + filePath);
-
 			varProps.loadFromXML(new FileInputStream(filePath));
 			redPath = varProps.getProperty("redPath");
 			System.out.println("redpath: " + varProps.getProperty("redPath"));
@@ -187,12 +172,10 @@ public class VarClass {
 			for (String ss : arr) {
 				pango = ss;
 			}
-
 			panguGUID = pango.replaceAll("}", "").replaceAll("\"", "");
 			// Open URL with GUID
 			driver.get(httpOrHttps + panguGUID);
 			System.out.println("Final Url: " + httpOrHttps + panguGUID);
-
 			// DATE file format
 			Calendar cal = Calendar.getInstance();
 			cal.setTime(Date.from(Instant.now()));

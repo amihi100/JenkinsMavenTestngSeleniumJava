@@ -1,7 +1,6 @@
 package TestNG;
 
 import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -15,8 +14,7 @@ public class IframeCreditGuard {
 
 		// Screen: CreditGuard
 		TimeUnit.SECONDS.sleep(10);
-		// handke with iframe
-
+		// handshake with iframe
 		// handle with popups alerts
 		// Print the alert first:
 		// System.out.println(varClass.driver.switchTo().alert().getText());
@@ -29,7 +27,6 @@ public class IframeCreditGuard {
 			varClass.driver.findElementByXPath("//*[@id=\"mat-checkbox-1\"]/label/div").click();
 			TimeUnit.MILLISECONDS.sleep(varClass.MILLISECONDS);
 			varClass.driver.findElementByXPath("//*[@id=\"content\"]/form/button/span").click();
-
 		} else {
 			varClass.wait.until(ExpectedConditions.visibilityOfElementLocated(
 					By.xpath("//div[@class='account']//button[@class='btn-blue'][contains(text(),'המשך')]")));
@@ -37,7 +34,6 @@ public class IframeCreditGuard {
 			varClass.driver
 					.findElementByXPath("//div[@class='account']//button[@class='btn-blue'][contains(text(),'המשך')]")
 					.click();
-
 			varClass.driver.findElementByXPath("//*[@id=\"cardNumber\"]").sendKeys(varClass.cardNumber);
 			varClass.driver.findElementByXPath("//*[@id=\"personalId\"]").sendKeys(varClass.cardPersonalId);
 			varClass.driver.findElementByXPath("//*[@id=\"fullName\"]").sendKeys(varClass.cardFullName);
@@ -51,8 +47,6 @@ public class IframeCreditGuard {
 			dropdownMonth.selectByVisibleText(varClass.cardMonth);
 			TimeUnit.SECONDS.sleep(varClass.waitBeforeClick);
 			varClass.driver.findElementByXPath("//*[@id=\"submitBtn\"]").click();
-
 		}
-
 	}
 }

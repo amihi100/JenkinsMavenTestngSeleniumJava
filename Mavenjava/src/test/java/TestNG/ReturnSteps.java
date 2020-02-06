@@ -1,7 +1,6 @@
 package TestNG;
 
 import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -12,14 +11,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 public class ReturnSteps {
 	WebDriver driver;
 	VarClass varClass;
-	
-	
-	
-	
-	
-	
+
 	public void returnSteps(WebDriver driver, VarClass varClass) throws InterruptedException {
-		
 		TimeUnit.SECONDS.sleep(varClass.waitBeforeClick + 1);
 		// return from payments to covers:
 		varClass.driver.findElementByXPath("//div[@class='account']//button[@class='btn-empty']").click();
@@ -79,11 +72,8 @@ public class ReturnSteps {
 		JavascriptExecutor js = (JavascriptExecutor) varClass.driver;
 		js.executeScript("$('#media-only').trigger('swipe', {startX: 0.95})");
 
-		varClass.driver
-				.findElementByXPath(
-						"/html/body/app-root/app-offer/aw-wizard/div/aw-wizard-step[8]/div/app-step-header/h1")
-				.click();
-
+		varClass.driver.findElementByXPath(
+				"/html/body/app-root/app-offer/aw-wizard/div/aw-wizard-step[8]/div/app-step-header/h1").click();
 		varClass.wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("step-0-q7.1-radio-2")));
 		TimeUnit.SECONDS.sleep(varClass.waitBeforeClick);
 
@@ -95,7 +85,6 @@ public class ReturnSteps {
 		(new Actions(varClass.driver)).dragAndDrop(element12, target12).perform();
 
 		TimeUnit.SECONDS.sleep(varClass.waitBeforeClick + 1);
-
 		// screen7
 		TimeUnit.SECONDS.sleep(varClass.waitBeforeClick + 1);
 		element = varClass.driver.findElement(By.xpath(
@@ -119,26 +108,21 @@ public class ReturnSteps {
 		(new Actions(varClass.driver)).dragAndDrop(element, target).perform();
 		// screen4
 		TimeUnit.SECONDS.sleep(varClass.waitBeforeClick + 1);
-
 		element = varClass.driver.findElement(By.xpath(
 				"/html/body/app-root/app-offer/aw-wizard/div/aw-wizard-step[4]/div/app-step-content-vertical-options-view/ul/li[5]/label"));
 		target = varClass.driver.findElement(By.className("accessibility-menu"));
 		(new Actions(varClass.driver)).dragAndDrop(element, target).perform();
-
 		// screen3
 		TimeUnit.SECONDS.sleep(varClass.waitBeforeClick + 1);
 		element = varClass.driver.findElement(By.xpath("//aw-wizard-step[3]//button[2]"));
 		target = varClass.driver.findElement(By.xpath("//button[@class='btn-toggle-accessibility-menu']//img"));
 		(new Actions(varClass.driver)).dragAndDrop(element, target).perform();
-
 		// screen2
 		TimeUnit.SECONDS.sleep(varClass.waitBeforeClick + 1);
 		element = varClass.driver.findElement(By.xpath(
 				"/html/body/app-root/app-offer/aw-wizard/div/aw-wizard-step[2]/div/app-step-content-vertical-options-view/ul/li[4]/label"));
 		target = varClass.driver.findElement(By.xpath("//button[@class='btn-toggle-accessibility-menu']//img"));
 		(new Actions(varClass.driver)).dragAndDrop(element, target).perform();
-		
-	}
-	
 
+	}
 }

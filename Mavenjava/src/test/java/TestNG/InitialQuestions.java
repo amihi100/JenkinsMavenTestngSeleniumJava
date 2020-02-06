@@ -50,7 +50,6 @@ public class InitialQuestions {
 	///// Variable screen 1.9 Restriction in 3 years://////
 	String true_non_restrictions = "/html/body/app-root/app-offer/aw-wizard/div/aw-wizard-step[9]/div/app-step-content-horizontal-options-view/ul/li[2]/label/span[1]";
 	String false_non_restrictions = "/html/body/app-root/app-offer/aw-wizard/div/aw-wizard-step[9]/div/app-step-content-horizontal-options-view/ul/li[1]/label/span[1]";
-
 	
 	// Start insurance at the same day.
 	int startDateYear = Calendar.getInstance().get(Calendar.YEAR);
@@ -186,7 +185,7 @@ public class InitialQuestions {
 		// Display accessibility menu
 		JavascriptExecutor js = (JavascriptExecutor) varClass.driver;
 		js.executeScript("$('.accessibility-menu').show()");
-		// Start count time for propsal
+		// Start count time for proposal
 		Instant start = Instant.now();
 		varClass.wait = new WebDriverWait(varClass.driver, varClass.waitForElement);
 		// Screen1.1: Start insurance date.

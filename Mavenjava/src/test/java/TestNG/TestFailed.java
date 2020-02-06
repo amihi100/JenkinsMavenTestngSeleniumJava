@@ -8,7 +8,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
-
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -32,29 +31,20 @@ public class TestFailed {
 //		try {
 			System.out.println("Input line: " +inputLine);
 			out.write(inputLine);
-			
 			// Take ScreenShot:
 			File scrFile = ((TakesScreenshot) varClass.driver).getScreenshotAs(OutputType.FILE);
 			// Now copy .jpeg to screenShotPath
 			scrFile = ((TakesScreenshot) varClass.driver).getScreenshotAs(OutputType.FILE);
 			FileUtils.copyFile(scrFile, new File(
 					varClass.LogAndScreenShotPath + "\\" + varClass.environment + varClass.filename + ".jpeg"));
-			TimeUnit.SECONDS.sleep(varClass.waitBeforeClick);
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//			throw new Exception("Failed in ScreenShot");
-//		}
-//		try {
-
-			
+			TimeUnit.SECONDS.sleep(varClass.waitBeforeClick);	
 			// Print logs from console (Warnings and Errors ONLY!)
 			System.out.println("Errors logs:");
 			LogEntries logs = varClass.driver.manage().logs().get("browser");
 			for (LogEntry entry : logs) {
 				System.out.println(entry.getMessage());
 				errorsList.add(entry.getMessage());
-			}
-			;
+			};
 			// Wait +7 seconds for iiii site.
 			TimeUnit.SECONDS.sleep(varClass.waitBeforeClick + 7);
 			// Email fields:
