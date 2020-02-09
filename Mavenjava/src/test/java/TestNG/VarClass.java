@@ -18,8 +18,8 @@ import org.openqa.selenium.logging.LogType;
 import org.openqa.selenium.logging.LoggingPreferences;
 import org.openqa.selenium.remote.CapabilityType;
 import org.testng.annotations.Parameters;
-import org.openqa.selenium.logging.LogEntry;
-import org.json.simple.parser.JSONParser;
+//import org.openqa.selenium.logging.LogEntry;
+//import org.json.simple.parser.JSONParser;
 public class VarClass {
 
 	/// ###*** Start: Define in each machine ***###///
@@ -52,7 +52,7 @@ public class VarClass {
 	@Parameters({ "xml", "env" })
 	public void defineVariables(String xml) throws Exception {
 		try {
-			JSONParser parser = new JSONParser();
+			//JSONParser parser = new JSONParser();
 			Properties varProps = new Properties();
 			windowDimension = new Dimension(372, 900);
 			String dir = System.getProperty("user.dir");
