@@ -47,7 +47,7 @@ public class ForwardSteps {
 		// move to firstOfferScreen
 		TimeUnit.SECONDS.sleep(varClass.waitBeforeClick + 1);
 		varClass.driver.findElementByXPath("//aw-wizard-step[9]//button[1]").click();
-		TimeUnit.SECONDS.sleep(10);
+		TimeUnit.SECONDS.sleep(15);
 		// move to screen2.1
 		TimeUnit.SECONDS.sleep(varClass.waitBeforeClick + 2);
 		varClass.driver.findElementByXPath("//a[@class='link-procceed']").click();
