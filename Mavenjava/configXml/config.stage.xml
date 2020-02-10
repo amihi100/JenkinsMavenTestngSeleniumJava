@@ -15,7 +15,7 @@
 	<entry key="startInsuranceDate">0111 - This value is in sanity class!</entry>
 	<entry key="numberOfDrivers">3</entry>
 	<entry key="youngestDriverAge">31</entry>
-	<entry key="drivingYears">10</entry>
+	<entry key="drivingYears">14</entry>
 	<entry key="mortgageCar">true</entry>
 	<entry key="yearsOfInsurance">true</entry>
 	<entry key="claimsIn3Years">true</entry>
@@ -23,7 +23,6 @@
 	<entry key="restrictions">false</entry>
 	<!-- Define scenario variables - contact wizard : -->
 	<entry key="wizardPhone0">0507202828</entry>
-
 
 	<!-- Define scenario variables - FINAL offer questions: -->
 	<!-- Policy owner details: -->
