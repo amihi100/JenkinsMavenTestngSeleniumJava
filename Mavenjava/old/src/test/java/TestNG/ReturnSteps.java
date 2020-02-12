@@ -52,9 +52,8 @@ public class ReturnSteps {
 		// return from policy owner details to first offer screen:
 		TimeUnit.MILLISECONDS.sleep(varClass.MILLISECONDS);
 		varClass.driver.findElementByXPath("//aw-wizard-step[1]//div[1]//div[1]//button[2]").click();
-		//return from first offer screen to screen 9.
 		TimeUnit.MILLISECONDS.sleep(varClass.MILLISECONDS);
-		varClass.driver.findElementByClassName("link-back").click();
+		varClass.driver.findElementByXPath("//a[@class='link-back']").click();
 		TimeUnit.MILLISECONDS.sleep(varClass.MILLISECONDS);
 
 		// return back in first offer:

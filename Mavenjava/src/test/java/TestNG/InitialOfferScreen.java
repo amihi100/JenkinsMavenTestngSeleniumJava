@@ -7,60 +7,64 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class InitialOfferScreen {
-	
+
 	WebDriver driver;
 	VarClass varClass;
-	
+
 	public void initialOfferScreen(WebDriver driver, VarClass varClass) throws InterruptedException {
 //		driver = driver;
-		TimeUnit.SECONDS.sleep(varClass.waitBeforeClick+ 7);
-		WebDriverWait wait1 = new WebDriverWait(varClass.driver,varClass.waitForElement);
-		wait1.until(ExpectedConditions.visibilityOfElementLocated(
-				By.cssSelector("body > app-root > primary-bid > div > div.bid-content > a.link-procceed")));
-		System.out.println("Count of links on the page: " + varClass.driver.findElements(By.tagName("a")).size());
+		TimeUnit.SECONDS.sleep(varClass.waitBeforeClick + 7);
+		WebDriverWait wait1 = new WebDriverWait(varClass.driver, varClass.waitForElement);
+		wait1.until(
+				ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='insurance-benefits']//span")));
 		System.out.println(
-				"Car number: " + varClass.driver.findElementByXPath("//*[@id=\"carDetilas\"]/span[3]").getText());
-		System.out.println("Price of first offer: " + varClass.driver
-				.findElementByXPath("//*[@id=\"primary_bid_div\"]/div[1]/div[1]/div[1]/span").getText());
-		System.out.println("Start insurance date: " + varClass.driver
-				.findElementByXPath("//*[@id=\"primary_bid_div\"]/div[1]/div[2]/div[3]").getText());
-		// Valid days of proposal:
-		System.out.println(varClass.driver.findElementByXPath("//*[@id=\"primary_bid_div\"]/div[1]/div[4]/span")
-				.getText().toString());
+				"Number of links counted on the page - SPA: " + varClass.driver.findElements(By.tagName("a")).size());
+		System.out.println("Car number: " + varClass.driver.findElementByClassName("car-type").getText());
+		System.out.println(
+				"Price of first offer: " + varClass.driver.findElementByClassName("insurance-price").getText());
+		System.out
+				.println("Start insurance date: " + varClass.driver.findElementByClassName("insurance-date").getText());
+		//Print valid days of proposal:
+		System.out.println(varClass.driver.findElementByClassName("bid-extra-details").getText().toString());
+		//Click on i for information of sale details.
+		varClass.driver.findElementByClassName("iocn-info").click();
+		TimeUnit.MILLISECONDS.sleep(varClass.MILLISECONDS);
+		varClass.driver.findElementByXPath("//modal-dialog[@id='modal-insurance-takanon']//img").click();
+		TimeUnit.MILLISECONDS.sleep(varClass.MILLISECONDS);
 		// Check covers:
-		varClass.driver.findElementByXPath("/html/body/app-root/primary-bid/div/div[1]/ul/li[1]/a").click();
+		//click to Show() content.
+		varClass.driver.findElementByXPath("//button[@class='collapse__triger collapse__triger--btn']").click();
 		TimeUnit.MILLISECONDS.sleep(varClass.MILLISECONDS);
-		varClass.driver
-				.findElementByXPath("//*[@id=\"modal-insurance-covers\"]/div[1]/div/div[2]/ul/li[1]/panel/div/a")
+		TimeUnit.MILLISECONDS.sleep(varClass.MILLISECONDS);
+		//Print main covers included:
+				System.out.println(varClass.driver.findElementByClassName("insurance-covers--content").getText().toString());
+		//Click to open covers modal:
+		varClass.driver.findElementByClassName("link-cover-details").click();
+		TimeUnit.MILLISECONDS.sleep(varClass.MILLISECONDS);
+		varClass.driver.findElementByXPath("//*[@id=\"modal-insurance-covers\"]/div[1]/div/div[2]/ul/li[1]/panel/div/a")
 				.click();
 		TimeUnit.MILLISECONDS.sleep(varClass.MILLISECONDS);
-		varClass.driver
-				.findElementByXPath("//*[@id=\"modal-insurance-covers\"]/div[1]/div/div[2]/ul/li[1]/panel/div/a")
+		varClass.driver.findElementByXPath("//*[@id=\"modal-insurance-covers\"]/div[1]/div/div[2]/ul/li[1]/panel/div/a")
 				.click();
 		TimeUnit.MILLISECONDS.sleep(varClass.MILLISECONDS);
-		varClass.driver
-				.findElementByXPath("//*[@id=\"modal-insurance-covers\"]/div[1]/div/div[2]/ul/li[3]/panel/div/a")
+		varClass.driver.findElementByXPath("//*[@id=\"modal-insurance-covers\"]/div[1]/div/div[2]/ul/li[3]/panel/div/a")
 				.click();
 		TimeUnit.MILLISECONDS.sleep(varClass.MILLISECONDS);
-		varClass.driver
-				.findElementByXPath("//*[@id=\"modal-insurance-covers\"]/div[1]/div/div[2]/ul/li[3]/panel/div/a")
-				.click();
-		TimeUnit.MILLISECONDS.sleep(varClass.MILLISECONDS);
-		TimeUnit.MILLISECONDS.sleep(varClass.MILLISECONDS);
-		varClass.driver
-				.findElementByXPath("//*[@id=\"modal-insurance-covers\"]/div[1]/div/div[2]/ul/li[5]/panel/div/a")
-				.click();
-		TimeUnit.MILLISECONDS.sleep(varClass.MILLISECONDS);
-		varClass.driver
-				.findElementByXPath("//*[@id=\"modal-insurance-covers\"]/div[1]/div/div[2]/ul/li[5]/panel/div/a")
+		varClass.driver.findElementByXPath("//*[@id=\"modal-insurance-covers\"]/div[1]/div/div[2]/ul/li[3]/panel/div/a")
 				.click();
 		TimeUnit.MILLISECONDS.sleep(varClass.MILLISECONDS);
 		TimeUnit.MILLISECONDS.sleep(varClass.MILLISECONDS);
-		varClass.driver.findElementByXPath("//*[@id=\"modal-insurance-covers\"]/div[1]/div/div[1]/button/img")
+		varClass.driver.findElementByXPath("//*[@id=\"modal-insurance-covers\"]/div[1]/div/div[2]/ul/li[5]/panel/div/a")
 				.click();
+		TimeUnit.MILLISECONDS.sleep(varClass.MILLISECONDS);
+		varClass.driver.findElementByXPath("//*[@id=\"modal-insurance-covers\"]/div[1]/div/div[2]/ul/li[5]/panel/div/a")
+				.click();
+		TimeUnit.MILLISECONDS.sleep(varClass.MILLISECONDS);
+		TimeUnit.MILLISECONDS.sleep(varClass.MILLISECONDS);
+		varClass.driver.findElementByXPath("//*[@id=\"modal-insurance-covers\"]/div[1]/div/div[1]/button/img").click();
 		TimeUnit.MILLISECONDS.sleep(varClass.MILLISECONDS);
 		// Protection / Secure level:
-		varClass.driver.findElementByXPath("//*[@id=\"primary_bid_div\"]/div[1]/ul/li[2]/a").click();
+		varClass.driver.findElementByXPath("//ul[@class='list-insurance-links']//li[1]").click();
 		TimeUnit.MILLISECONDS.sleep(varClass.MILLISECONDS);
 		// Printing the secure level from Menora:
 		System.out.println("Protect gear needed: "
@@ -68,20 +72,18 @@ public class InitialOfferScreen {
 		varClass.driver.findElementByXPath("//*[@id=\"modal-shield\"]/div[1]/div/div[1]/button/img").click();
 		TimeUnit.MILLISECONDS.sleep(varClass.MILLISECONDS);
 		// Terms of condition:
-		varClass.driver.findElementByXPath("//span[@class='bid-id']//a[@class='privacy-policy']").click();
+		varClass.driver.findElementByXPath("//div[contains(text(),'-7')]").click();
 		TimeUnit.MILLISECONDS.sleep(varClass.MILLISECONDS);
-		varClass.driver.findElementByXPath("//*[@id=\"modal-privacy-policy\"]/div[1]/div/div[1]/button/img")
-				.click();
+		varClass.driver.findElementByXPath("//modal-dialog[@id='modal-terms-of-service']//button[@class='btn-modal-close']").click();
 		TimeUnit.MILLISECONDS.sleep(varClass.MILLISECONDS);
 		// Privacy policy:
 		varClass.driver
-				.findElementByXPath("/html[1]/body[1]/app-root[1]/primary-bid[1]/div[1]/div[1]/div[4]/span[1]/a[2]")
+				.findElementByXPath("//div[@class='bid-id']//a[@class='privacy-policy']")
 				.click();
 		TimeUnit.MILLISECONDS.sleep(varClass.MILLISECONDS);
-		varClass.driver.findElementByXPath("//*[@id=\"modal-privacy-policy\"]/div[1]/div/div[1]/button/img")
-				.click();
+		varClass.driver.findElementByXPath("//*[@id=\"modal-privacy-policy\"]/div[1]/div/div[1]/button/img").click();
 		TimeUnit.MILLISECONDS.sleep(varClass.MILLISECONDS);
 		TimeUnit.SECONDS.sleep(varClass.waitBeforeClick);
-		varClass.driver.findElementByXPath("//*[@id=\"primary_bid_div\"]/div[1]/a[1]").click();		
-	}		
+		varClass.driver.findElementByXPath("//a[@class='link-procceed']").click();
+	}
 }
