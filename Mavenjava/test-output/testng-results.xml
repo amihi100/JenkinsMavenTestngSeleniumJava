@@ -2,44 +2,44 @@
 <testng-results skipped="0" failed="0" ignored="4" total="12" passed="8">
   <reporter-output>
   </reporter-output>
-  <suite name="Test-class Suite" duration-ms="430994" started-at="2020-02-18T10:52:36Z" finished-at="2020-02-18T10:59:47Z">
+  <suite name="Test-class Suite" duration-ms="423129" started-at="2020-03-04T17:22:26Z" finished-at="2020-03-04T17:29:29Z">
     <groups>
     </groups>
-    <test name="Test-class test 2 red1years" duration-ms="430994" started-at="2020-02-18T10:52:36Z" finished-at="2020-02-18T10:59:47Z">
+    <test name="Test-class test 2 red1years" duration-ms="423129" started-at="2020-03-04T17:22:26Z" finished-at="2020-03-04T17:29:29Z">
       <class name="TestNG.SanityAllOptions">
-        <test-method status="PASS" signature="initialQuestions()[pri:10, instance:TestNG.SanityAllOptions@5d0bf09b]" name="initialQuestions" duration-ms="55270" started-at="2020-02-18T10:52:36Z" finished-at="2020-02-18T10:53:31Z">
+        <test-method status="PASS" signature="initialQuestions()[pri:10, instance:TestNG.SanityAllOptions@5d0bf09b]" name="initialQuestions" duration-ms="53970" started-at="2020-03-04T17:22:26Z" finished-at="2020-03-04T17:23:20Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialQuestions -->
-        <test-method status="PASS" signature="initialOfferScreen()[pri:30, instance:TestNG.SanityAllOptions@5d0bf09b]" name="initialOfferScreen" duration-ms="55779" started-at="2020-02-18T10:53:31Z" depends-on-methods="TestNG.SanityAllOptions.initialQuestions" finished-at="2020-02-18T10:54:27Z">
+        <test-method status="PASS" signature="initialOfferScreen()[pri:30, instance:TestNG.SanityAllOptions@5d0bf09b]" name="initialOfferScreen" duration-ms="54755" started-at="2020-03-04T17:23:20Z" depends-on-methods="TestNG.SanityAllOptions.initialQuestions" finished-at="2020-03-04T17:24:15Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialOfferScreen -->
-        <test-method status="PASS" signature="finalQuestions()[pri:40, instance:TestNG.SanityAllOptions@5d0bf09b]" name="finalQuestions" duration-ms="78214" started-at="2020-02-18T10:54:27Z" depends-on-methods="TestNG.SanityAllOptions.initialOfferScreen" finished-at="2020-02-18T10:55:45Z">
+        <test-method status="PASS" signature="finalQuestions()[pri:40, instance:TestNG.SanityAllOptions@5d0bf09b]" name="finalQuestions" duration-ms="76343" started-at="2020-03-04T17:24:15Z" depends-on-methods="TestNG.SanityAllOptions.initialOfferScreen" finished-at="2020-03-04T17:25:31Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- finalQuestions -->
-        <test-method status="PASS" signature="finalOfferScreen()[pri:50, instance:TestNG.SanityAllOptions@5d0bf09b]" name="finalOfferScreen" duration-ms="32581" started-at="2020-02-18T10:55:45Z" depends-on-methods="TestNG.SanityAllOptions.finalQuestions" finished-at="2020-02-18T10:56:18Z">
+        <test-method status="PASS" signature="finalOfferScreen()[pri:50, instance:TestNG.SanityAllOptions@5d0bf09b]" name="finalOfferScreen" duration-ms="32044" started-at="2020-03-04T17:25:31Z" depends-on-methods="TestNG.SanityAllOptions.finalQuestions" finished-at="2020-03-04T17:26:03Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- finalOfferScreen -->
-        <test-method status="PASS" signature="covers()[pri:70, instance:TestNG.SanityAllOptions@5d0bf09b]" name="covers" duration-ms="5512" started-at="2020-02-18T10:56:18Z" depends-on-methods="TestNG.SanityAllOptions.finalOfferScreen" finished-at="2020-02-18T10:56:23Z">
+        <test-method status="PASS" signature="covers()[pri:70, instance:TestNG.SanityAllOptions@5d0bf09b]" name="covers" duration-ms="5423" started-at="2020-03-04T17:26:03Z" depends-on-methods="TestNG.SanityAllOptions.finalOfferScreen" finished-at="2020-03-04T17:26:08Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- covers -->
-        <test-method status="PASS" signature="payments()[pri:80, instance:TestNG.SanityAllOptions@5d0bf09b]" name="payments" duration-ms="27802" started-at="2020-02-18T10:56:23Z" depends-on-methods="TestNG.SanityAllOptions.covers" finished-at="2020-02-18T10:56:51Z">
+        <test-method status="PASS" signature="payments()[pri:80, instance:TestNG.SanityAllOptions@5d0bf09b]" name="payments" duration-ms="27405" started-at="2020-03-04T17:26:08Z" depends-on-methods="TestNG.SanityAllOptions.covers" finished-at="2020-03-04T17:26:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- payments -->
-        <test-method status="PASS" signature="returnSteps()[pri:85, instance:TestNG.SanityAllOptions@5d0bf09b]" name="returnSteps" duration-ms="74467" started-at="2020-02-18T10:56:51Z" depends-on-methods="TestNG.SanityAllOptions.payments" finished-at="2020-02-18T10:58:06Z">
+        <test-method status="PASS" signature="returnSteps()[pri:85, instance:TestNG.SanityAllOptions@5d0bf09b]" name="returnSteps" duration-ms="72565" started-at="2020-03-04T17:26:36Z" depends-on-methods="TestNG.SanityAllOptions.payments" finished-at="2020-03-04T17:27:48Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- returnSteps -->
-        <test-method status="PASS" signature="forwardSteps()[pri:86, instance:TestNG.SanityAllOptions@5d0bf09b]" name="forwardSteps" duration-ms="101303" started-at="2020-02-18T10:58:06Z" depends-on-methods="TestNG.SanityAllOptions.returnSteps" finished-at="2020-02-18T10:59:47Z">
+        <test-method status="PASS" signature="forwardSteps()[pri:86, instance:TestNG.SanityAllOptions@5d0bf09b]" name="forwardSteps" duration-ms="100593" started-at="2020-03-04T17:27:48Z" depends-on-methods="TestNG.SanityAllOptions.returnSteps" finished-at="2020-03-04T17:29:29Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- forwardSteps -->
-        <test-method status="PASS" signature="closeChrome()[pri:0, instance:TestNG.SanityAllOptions@5d0bf09b]" name="closeChrome" is-config="true" duration-ms="1179" started-at="2020-02-18T10:59:47Z" finished-at="2020-02-18T10:59:48Z">
+        <test-method status="PASS" signature="closeChrome()[pri:0, instance:TestNG.SanityAllOptions@5d0bf09b]" name="closeChrome" is-config="true" duration-ms="1328" started-at="2020-03-04T17:29:29Z" finished-at="2020-03-04T17:29:30Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeChrome -->

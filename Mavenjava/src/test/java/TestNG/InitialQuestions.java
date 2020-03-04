@@ -191,8 +191,9 @@ public class InitialQuestions {
 		// Screen1.1: Start insurance date.
 		TimeUnit.SECONDS.sleep(varClass.waitBeforeClick + 1);
 		varClass.driver.findElementByXPath(open_calander).click();
-		TimeUnit.SECONDS.sleep(varClass.waitBeforeClick + 1);
+		TimeUnit.SECONDS.sleep(varClass.waitBeforeClick + 2);
 		varClass.driver.findElementByCssSelector(select_today).click();
+		TimeUnit.SECONDS.sleep(varClass.waitBeforeClick + 1);
 		TimeUnit.SECONDS.sleep(varClass.waitBeforeClick);
 		varClass.driver.findElementByXPath(next_one).click();
 		// Screen1.2: How many drivers.
