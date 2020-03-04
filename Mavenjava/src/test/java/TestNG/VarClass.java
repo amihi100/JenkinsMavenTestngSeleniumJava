@@ -23,7 +23,7 @@ import org.testng.annotations.Parameters;
 public class VarClass {
 
 	/// ###*** Start: Define in each machine ***###///
-	String chrome_driver_path = "C:\\Users\\amichaito\\Desktop\\chromedriver2\\chromedriver.exe";
+	String chrome_driver_path = "C:\\Users\\amichaito\\Desktop\\chrome\\chromedriver.exe";
 	String logs_and_screenshot_path = "C:\\Users\\amichaito\\Desktop\\PangoErrorLogs";
 	/// ###*** End: Define in each machine ***###///
 
