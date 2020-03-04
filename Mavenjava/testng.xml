@@ -13,7 +13,7 @@
  -->
 	
 	<test name="Test-class test 2 red1years">
-		<parameter name="xml" value="stage" />
+		<parameter name="xml" value="app" />
 		<classes>
 			<class name="TestNG.SanityAllOptions" />
 		</classes>

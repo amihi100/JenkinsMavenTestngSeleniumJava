@@ -50,7 +50,7 @@ public class ForwardSteps {
 		TimeUnit.SECONDS.sleep(10);
 		// move to screen2.1
 		TimeUnit.SECONDS.sleep(varClass.waitBeforeClick + 2);
-		varClass.driver.findElementByXPath("//a[@class='link-procceed']").click();
+		varClass.driver.findElementByClassName("link-procceed").click();
 		// move to screen2.2, screen privacy details of policy owner:
 		TimeUnit.SECONDS.sleep(varClass.waitBeforeClick + 1);
 		varClass.driver.findElementByXPath("//aw-wizard-step[1]//div[1]//div[1]//button[1]").click();
