@@ -11,6 +11,7 @@ import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -146,6 +147,7 @@ public class VarClass {
 			options.setCapability(CapabilityType.LOGGING_PREFS, logPrefs);
 			// Enable for headless Selenium tests.
 //			options.addArguments("headless");
+			options.setPageLoadStrategy(PageLoadStrategy.NONE);
 			options.addArguments("--log-level=1");
 			options.addArguments("disable-infobars");
 			options.setExperimentalOption("useAutomationExtension", false);

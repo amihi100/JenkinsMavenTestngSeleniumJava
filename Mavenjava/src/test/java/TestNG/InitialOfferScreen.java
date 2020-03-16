@@ -27,7 +27,7 @@ public class InitialOfferScreen {
 		//Print valid days of proposal:
 		System.out.println(varClass.driver.findElementByClassName("bid-extra-details").getText().toString());
 		//Click on i for information of sale details.
-		varClass.driver.findElementByClassName("iocn-info").click();
+		varClass.driver.findElementByClassName("icon-info-img").click();
 		TimeUnit.MILLISECONDS.sleep(varClass.MILLISECONDS);
 		varClass.driver.findElementByXPath("//modal-dialog[@id='modal-insurance-takanon']//img").click();
 		TimeUnit.MILLISECONDS.sleep(varClass.MILLISECONDS);

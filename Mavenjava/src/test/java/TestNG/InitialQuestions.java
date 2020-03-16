@@ -183,6 +183,7 @@ public class InitialQuestions {
 
 	public void initialQuestions(WebDriver driver, VarClass varClass) throws InterruptedException {
 		// Display accessibility menu
+		TimeUnit.SECONDS.sleep(varClass.waitBeforeClick + 2);
 		JavascriptExecutor js = (JavascriptExecutor) varClass.driver;
 		js.executeScript("$('.accessibility-menu').show()");
 		// Start count time for proposal

@@ -208,16 +208,14 @@ public class FinalQuestions {
 						"/html/body/app-root/external-app-offer/aw-wizard/div/aw-wizard-step[7]/div/div/button[1]")
 				.click();
 		// Screen2.5: Agreements sign V.
-		varClass.wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("chk-step9-q2-lbl")));
+		varClass.wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("chk-step9-q3-lbl")));
 		TimeUnit.MILLISECONDS.sleep(varClass.MILLISECONDS);
 		// click V:
-		varClass.driver.findElementByXPath(
-				"/html/body/app-root/external-app-offer/aw-wizard/div/aw-wizard-step[8]/div/ul/li[3]/question-wrapper/div/div/single-checkbox/label")
-				.click();
+		varClass.driver.findElementById("chk-step9-q3-lbl").click();
 		TimeUnit.MILLISECONDS.sleep(varClass.MILLISECONDS);
 		// open privacy policy:
 		varClass.driver.findElementByXPath(
-				"/html/body/app-root/external-app-offer/aw-wizard/div/aw-wizard-step[8]/div/ul/li[1]/question-wrapper/div/div/plain-text/p/span")
+				"/html[1]/body[1]/app-root[1]/external-app-offer[1]/aw-wizard[1]/div[1]/aw-wizard-step[8]/div[1]/ul[1]/li[1]/question-wrapper[1]/div[1]/div[1]/plain-text[1]/p[1]/span[1]")
 				.click();
 		TimeUnit.MILLISECONDS.sleep(varClass.MILLISECONDS);
 		varClass.driver.findElementByXPath("//*[@id=\"modal-general-ext\"]/div[1]/div/div[2]/p/span").click();
