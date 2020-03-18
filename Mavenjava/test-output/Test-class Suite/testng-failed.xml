@@ -2,7 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite thread-count="2" guice-stage="DEVELOPMENT" name="Failed suite [Test-class Suite]" parallel="tests">
   <test thread-count="2" name="Test-class test 2 red1years(failed)" parallel="tests">
-    <parameter name="xml" value="app"/>
+    <parameter name="xml" value="dev"/>
     <classes>
       <class name="TestNG.SanityAllOptions">
         <methods>
